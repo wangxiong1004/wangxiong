@@ -1,0 +1,22 @@
+01.下载
+  windows下载地址: https://git-scm.com/downloads
+
+02.设置用户及邮箱
+  git config --global user.name "your name"
+  git config --global user.email "your email"
+
+03.git常用词语介绍
+  repository: 版本库（仓库）
+
+04.创建版本库
+  mkdir wangxiong -- 创建wangxiong文件夹
+  cd wangxiong  -- 切换到wangxiong文件夹
+  pwd -- 查看路径地址
+
+  git init -- 创建版本库
+
+  ls -ah -- 查看隐藏目录
+
+05.添加改动的文件
+  git add <file>
+  git commit -m '注释'
