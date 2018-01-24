@@ -5,6 +5,7 @@ git add -- 添加改动文件
 git commit -- 提交改动
 
 git push origin master -- 推送到远程仓库
+  git push -u origin master -- 第一次推送
 
 git status -- 查看状态
 
@@ -14,6 +15,7 @@ git diff -- 查看所有修改内容
 
 git log -- 查看提交的commit信息
   git log --pretty=oneline -- 查看简化的commit信息
+  git log --graph --pretty=oneline --abbrev-commit -- 查看分支合并图
 
 git reset --hard HEAD^ -- 回退到上一个版本（上一次的提交）
 
@@ -28,4 +30,31 @@ git reset HEAD <file> -- 把暂存区的修改撤销掉，重新放回工作区
 git rm <file> -- 删除文件
 git commit -m ''
 
+git remote add origin git@github.com:wangxiong1004/wangxiong.git  -- 关联远程仓库
 
+git clone git@github.com:wangxiong1004/wangxiong.git -- 将远程仓库下载到本地
+
+git checkout -b dev -- 创建dev分支并切换到dev分支
+
+git branch dev -- 创建dev分支
+  git branch -- 查看分支列表
+  git branch -d dev -- 删除分支
+  git branch -D <name> -- 删除一个没有合并过的分支
+  git branch -b dev origin/dev -- 创建远程origin的dev分支到本地
+  git branch --set-upstream dev origin/dev -- 指定本地dev分支与远程origin/dev分支的链接
+
+git checkout dev -- 切换到dev分支
+
+git merge dev -- 合并dev分支
+  git merge --no-ff -m "merge with no-ff" dev -- 禁用fast forward合并模式 -- 生成合并记录
+
+git stash -- 存储工作区
+  git stash list -- 查看存储记录
+  git stash apply -- 恢复存储，但不会删除存储记录
+  git stash drop -- 删除存储记录
+  git stash pop -- 恢复存储并删除记录
+
+git remote -- 查看远程仓库信息
+  git remote -v -- 显示更详细信息
+
+git pull -- 抓取远程分支
