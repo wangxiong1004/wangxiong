@@ -7,6 +7,14 @@
 
 03.git常用词语介绍
   repository: 版本库（仓库）
+  working directory: 工作区 -- 电脑里能看到的目录
+  .git -- git的版本库
+    stage: 暂存区
+    master: 分支
+    HEAD: 指针
+
+  git add: 将文件添加进去，实际上就是把文件修改添加到暂存区。
+  git commit: 提交修改，实际上就是把暂存区的所有内容提交到当前分支。
 
 04.创建版本库
   mkdir wangxiong -- 创建wangxiong文件夹
@@ -17,6 +25,31 @@
 
   ls -ah -- 查看隐藏目录
 
+  rm <filename> -- 删除文件
+
 05.添加改动的文件
   git add <file>
   git commit -m '注释'
+  git push origin master
+
+06.版本回退
+  git reset --hard HEAD^  -- 回退到上一个版本
+  git reset --hard commit_id -- 回退到指定版本
+
+07.放弃修改
+  1.还没有add的文件放弃修改
+  git checkout -- <filename>
+  2.已经add的文件放弃修改
+  git reset HEAD <file>
+  git checkout -- <filename>
+  3.已经commit的文件放弃
+  git reset --hard commit_id
+
+08.删除文件
+  1.确定删除
+  rm <file>
+  git rm <file>
+  git commit -m ''
+  2.删错了
+  git checkout -- <file>
+
