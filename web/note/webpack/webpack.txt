@@ -1,0 +1,124 @@
+1.安装
+  npm install webpack -g  -- 全局安装
+  npm install webpack --save-dev  -- 本地安装
+
+2.打包
+  webpack src/index.js dist/bundle.js -- 直接打包
+  webpack --config webpack.config.js  -- 配置文件打包
+
+3.目录配置
+  /src    -- 源码目录
+  /dist or /build -- 打包后的目录
+
+4.package.json配置文件
+  -- 配置命令
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --config webpack.config.js",
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "dev": "webpack-dev-server --open"
+  }
+  -- 执行
+  npm run dev
+
+4.webpack配置文件
+  |-webpack.config.js
+
+  const path = require('path');  -- 引入path模块
+
+  module.exports = {  // 导出
+    entry: './src/index.js',  // 入口文件
+    output: { // 出口文件
+      filename: 'bundle.js',  // 文件名称
+      path: path.resolve(__dirname, 'dist') // 文件路径
+    },
+    module: {},
+    plugins: [],
+    devtool: 'inline-source-map',
+    devServer: {
+      contentBase: './dist'
+    }
+  };
+
+5.组件目录形式
+  /components
+    /component
+      |- index.html
+      |- index.js
+      |- index.css
+      |- icon.svg
+      |- img.png
+
+4.加载css
+  npm install css-loader style-loader --save-dev
+  module: {
+    rules: [{
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader']
+    }]
+  }
+
+5.加载图片
+  npm install file-loader --save-dev
+  module: {
+    rules: [{
+      test: /\.(png|svg|jpg|gif)$/,
+      use: ['file-loader']
+    }]
+  }
+
+6.加载字体
+  npm install file-loader --save-dev
+  module: {
+    rules: [{
+      test: /\.(woff|woff2|eot|ttf|otf)$/,
+      use: ['file-loader']
+    }]
+  }
+
+7.加载数据
+  csv/tsv: npm install csv-loader --save-dev
+  xml: npm install xml-loader --save-dev
+  module: {
+    rules: [{
+      test: /\.(csv|tsv)$/,
+      use: ['csv-loader']
+    }, {
+      test: /\.xml$/,
+      use: ['xml-loader']
+    }]
+  }
+
+8.插件 -- html-webpack-plugin
+  npm install html-webpack-plugin --save-dev
+  const HtmlWebpackPlugin = require('html-webpack-plugin');
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'hello webpack'
+    })
+  ]
+
+9.插件 -- clean-webpack-plugin
+  npm install clean-webpack-plugin --save-dev
+  const CleanWebpackPlugin = require('clean-webpack-plugin');
+  plugins: [
+    new CleanWebpackPlugin()
+  ]
+
+10.js调试 -- source-map
+  devtool: 'inline-source-map'
+
+11.自动编译代码
+  01.webpack's Watch Mode  -- 观察模式
+  02.webpack-dev-server
+  03.webpack-dev-middleware
+
+  01.
+    webpack --watch
+  02.
+    npm install webpack-dev-server --save-dev
+    devServer: {
+      contentBase: './dist'
+    }
+  03.中间件容器

@@ -6,13 +6,24 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --config webpack.config.js",
-    "build": "webpack"
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "dev": "webpack-dev-server --open"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "clean-webpack-plugin": "^0.1.18",
+    "css-loader": "^0.28.9",
+    "file-loader": "^1.1.6",
     "lodash": "^4.17.4",
-    "webpack": "^3.10.0"
+    "style-loader": "^0.20.1",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1",
+    "xml-loader": "^1.2.1"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^2.30.1"
   }
 }

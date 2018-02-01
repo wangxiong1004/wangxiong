@@ -1,17 +1,21 @@
 
 // 引入模块
 import _ from "lodash";
-import printMe from './print.js';
-
+import './index.css';
+import Code from './code_dyh.png';
+import Data from './data.xml';
 
 function component() {
   var element = document.createElement("div");
-  var btn = document.createElement('button');
 
   element.innerHTML = _.join(["hello", "webpack"], " ");
-  btn.innerHTML = 'Click me and check the console!';
-  btn.onclick = printMe;
-  element.appendChild(btn);
+
+  var myCode = new Image();
+  myCode.src = Code;
+
+  element.appendChild(myCode);
+
+  console.log(Data);
 
   return element;
 }
