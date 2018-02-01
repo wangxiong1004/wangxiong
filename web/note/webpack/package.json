@@ -6,12 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --config webpack.config.js",
-    "build": "webpack",
+    "build": "webpack --config webpack.prod.js",
     "watch": "webpack --watch",
-    "dev": "webpack-dev-server --open"
+    "dev": "webpack-dev-server --open --config webpack.dev.js",
+    "server": "node server.js"
   },
-  "keywords": [],
   "author": "",
+  "keywords": [],
   "license": "ISC",
   "dependencies": {
     "clean-webpack-plugin": "^0.1.18",
@@ -21,9 +22,13 @@
     "style-loader": "^0.20.1",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.11.1",
+    "webpack-merge": "^4.1.1",
     "xml-loader": "^1.2.1"
   },
   "devDependencies": {
-    "html-webpack-plugin": "^2.30.1"
+    "express": "^4.16.2",
+    "html-webpack-plugin": "^2.30.1",
+    "uglifyjs-webpack-plugin": "^1.1.8",
+    "webpack-dev-middleware": "^2.0.4"
   }
 }

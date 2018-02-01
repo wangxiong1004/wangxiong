@@ -122,3 +122,18 @@
       contentBase: './dist'
     }
   03.中间件容器
+    npm install express webpack-dev-middleware --save-dev
+    |- server.js
+
+12.模块热替换
+  const webpack = require('webpack');
+  plugins: [
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
+  ],
+  devServer: {
+    hot: true
+  }
+
+13.精简输出 -- uglifyjs-webpack-plugin
+  npm install --save-dev uglifyjs-webpack-plugin
