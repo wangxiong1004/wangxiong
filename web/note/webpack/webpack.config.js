@@ -6,7 +6,8 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: './src/index.js'
+    app: './src/index.js',
+    another: './src/another-module.js'
     // print: './src/print.js'
   },
   output: {
@@ -27,7 +28,10 @@ module.exports = {
     }),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new UglifyJSPlugin()
+    new UglifyJSPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'common'
+    })
   ],
   devtool: 'inline-source-map',
   devServer: {

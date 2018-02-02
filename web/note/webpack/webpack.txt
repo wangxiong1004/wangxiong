@@ -137,3 +137,14 @@
 
 13.精简输出 -- uglifyjs-webpack-plugin
   npm install --save-dev uglifyjs-webpack-plugin
+
+14.生产环境构建
+  npm install webpack-meger --save-dev
+  |- webpack.dev.js
+  |- webpack.prod.js
+  |- webpack.common.js
+
+15.代码分离
+  01.入口起点 -- 使用 entry 配置手动地分离代码。
+  02.防止重复 -- 使用 CommonsChunkPlugin 去重和分离 chunk。
+  03.动态导入 -- 通过模块的内联函数调用来分离代码。
