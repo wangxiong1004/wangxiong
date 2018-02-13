@@ -5,3 +5,5 @@ web/node_modules
 web/note/webpack/node_modules
 
 testProject/node_modules
+
+*/node_modules
