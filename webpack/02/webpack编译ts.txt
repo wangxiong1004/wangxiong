@@ -1,0 +1,41 @@
+
+注：
+使用webpack3开头版本，则ts-loader只能使用3开头版本，否则编译报错
+
+简介
+js的超集
+
+官网
+typescriptlang.org/tslang.cn
+
+来源
+Microsoft
+
+使用
+typescript-loader
+
+安装
+npm install typescript ts-loader --save-dev   // 官方loader
+npm install typescript awesome-typescript-loader --save-dev   // 第三方
+
+配置
+tsconfig.json
+webpack.config.js
+
+配置选项
+官网/docs/handbook/compiler-options.html
+
+常用选项
+compilerOptions
+include
+exclude
+
+ts使用第三方库，安装声明文件
+npm install @types/lodash
+
+卸载
+npm uninstall @types/lodash
+
+安装typings
+npm install typings
+typing insatll lodash

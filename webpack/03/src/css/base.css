@@ -1,0 +1,10 @@
+body {
+  background: #ccc;
+}
+
+.box {
+  composes: bigBox from './common.css';
+  height: 200px;
+  width: 200px;
+  background: red;
+}

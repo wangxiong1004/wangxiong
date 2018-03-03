@@ -6,4 +6,6 @@ web/note/webpack/node_modules
 
 testProject/node_modules
 
+webpack/*/node_modules
+
 */node_modules

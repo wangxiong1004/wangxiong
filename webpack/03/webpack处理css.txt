@@ -1,0 +1,52 @@
+
+引入css
+css modules
+配置less/sass
+提取css代码
+
+|- loader
+style-loader
+css-loader
+  options
+    alias(解析的别名)
+    importLoader(@import)
+    minimize(是否压缩)
+    modules(启用css-modules)
+
+css-modules
+  localIdentName: '[path][name]_[local]--[hash:base64:5]'
+
+:local  -- 局部样式
+:global -- 全局样式
+compose -- 继承样式
+compose ... from path 从哪引入
+
+|- style-loader
+style-loader
+  - 配置
+  ['style-loader', 'css-loader']
+  - 结果： 会在heade中以style标签形式引入css
+
+  options
+    insertAt(插入位置)
+    insertInto(插入到dom)
+    singleton(是否只使用一个style标签)
+    transform(转化，浏览器环境下，插入页面前)
+
+style-loader/url:
+  -配置
+  ['style-loader/url', 'file-loader']
+  publicPath: './dist/'
+  - 结果： 会以link标签的形式引入css
+  - 不好处： 多个文件会以多个link标签引入，浪费加载资源
+
+style-loader/useable --控制样式是否插入页面中
+
+
+配置less/sass
+npm install less-loader less --save-dev
+npm install sass-loader node-sass --save-dev
+
+提取css
+extract-loader
+ExtractTextWebpackPlugin
