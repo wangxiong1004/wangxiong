@@ -1,0 +1,18 @@
+官网
+vuex.vuejs.org
+
+初始化项目
+vue init webpack-simple#1.0 vuex  // vue1.0
+vue init webpack-simple vuex  // 最新版本
+
+安装
+npm i vuex --save-dev
+
+vuex方法
+mapActions  -- 管理事件
+mapGetters  -- 获取数据
+
+
+actions
+mutations
+state

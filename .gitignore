@@ -8,4 +8,6 @@ testProject/node_modules
 
 webpack/*/node_modules
 
+vuex/*/node_modules
+
 */node_modules

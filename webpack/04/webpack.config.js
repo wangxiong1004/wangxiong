@@ -9,7 +9,7 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: 'dist/',
+    publicPath: './dist/',
   },
 
   module: {
@@ -22,7 +22,7 @@ module.exports = {
         loader: 'file-loader',
         options: {
           publicPath: '',
-          outputPath: 'dist/',
+          outputPath: '',
           useRelativePath: true
         }
       }]
