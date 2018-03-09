@@ -1,0 +1,41 @@
+HtmlWebpackPlugin
+
+options
+    template
+    filename
+    minify
+    chunks
+    inject
+
+
+-- 多页面应用
+多入口 entry
+多页面 html
+每个页面不同的chunk
+每个页面不同的参数
+
+
+多配置 -- 一个页面一个webpack配置
+webpack 3.1.0 开始支持
+parallel-webpack -- 并行的处理多份配置
+
+优点：
+    可以使用parllel-webpack来提高打包的速度
+    配置更加独立，灵活
+
+缺点：
+    不能多页面之间共享代码
+
+parallel-webpack
+    parallel-webpack --watch
+    parallel-webpack --config
+
+
+单配置 -- 多个页面一个配置
+
+优点：
+    可以共享各个entry之间的公用代码
+
+缺点：
+    打包速度比较慢
+    输出的内容比较复杂

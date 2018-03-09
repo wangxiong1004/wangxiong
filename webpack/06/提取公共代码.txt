@@ -1,0 +1,124 @@
+插件
+    CommonsChunkPlugin
+    webpack.optimize.CommonsChunkPlugin
+
+配置
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin(options)
+    ]
+
+参数
+    options.name or options.names: chunk的名称
+    options.filename -- 公用代码打包后的文件名
+    options.minChunks -- 最小出现的次数 Infinity
+    options.chunks -- 提取代码的范围
+    options.children -- 是不是在entry的子模块中查找
+    options.deepChildren
+    options.async -- 异步的公共代码块
+
+场景
+    单页应用
+    单页应用 + 第三方依赖
+    多页应用 + 第三方依赖 + webpack生成代码
+
+对单入口没有用
+
+多入口打包
+module.exports = {
+    entry: {
+        'pageA': './src/pageA',
+        'pageB': './src/pageB'
+    },
+
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].bundle.js',
+        chunkFilename: '[name].chunk.js'
+    },
+
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'common',
+            minChunks: 2
+        })
+    ]
+};
+
+将webpack生成的代码和第三方的代码打包到一起
+module.exports = {
+    entry: {
+        'pageA': './src/pageA',
+        'pageB': './src/pageB',
+        'vendor': ['lodash']
+    },
+
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].bundle.js',
+        chunkFilename: '[name].chunk.js'
+    },
+
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            minChunks: Infinity
+        })
+    ]
+};
+
+将webpack生成的代码和第三方的代码分开打包
+module.exports = {
+    entry: {
+        'pageA': './src/pageA',
+        'pageB': './src/pageB',
+        'vendor': ['lodash']
+    },
+
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].bundle.js',
+        chunkFilename: '[name].chunk.js'
+    },
+
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            minChunks: Infinity
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'manifest',
+            minChunks: Infinity
+        })
+    ]
+};
+
+将业务代码和webpack生成的代码和第三方的代码分开打包
+module.exports = {
+    entry: {
+        'pageA': './src/pageA',
+        'pageB': './src/pageB',
+        'vendor': ['lodash']
+    },
+
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].bundle.js',
+        chunkFilename: '[name].chunk.js'
+    },
+
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'common',
+            minChunks: 2,
+            chunks: ['pageA', 'pageB']
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            minChunks: Infinity
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'manifest',
+            minChunks: Infinity
+        })
+    ]
+};
