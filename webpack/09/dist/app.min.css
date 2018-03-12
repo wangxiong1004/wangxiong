@@ -1,0 +1,39 @@
+
+body {
+    font-size: 30px;
+}
+
+
+.src-css-common_bigBox_PK_Jy {
+    border: 3px solid darkcyan;
+}
+
+:root {
+    --mainColor: red;
+}
+
+p {
+    color: var(--mainColor);
+}html {
+  background: #999;
+}
+.src-css-base_box_3WjJS {
+  /*会在前面加载*/
+  height: 200px;
+  width: 200px;
+  border-radius: 4px;
+  background: #999;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+body {
+  font-size: 30px;
+}
+.src-css-common_bigBox_PK_Jy {
+  border: 3px solid darkcyan;
+}
+p {
+  color: red;
+}

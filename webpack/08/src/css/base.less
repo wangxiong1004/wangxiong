@@ -1,0 +1,13 @@
+@homeColor: #999;
+
+html {
+    background: @homeColor;
+}
+
+.box {
+    composes: bigBox from './common.less';   /*会在前面加载*/
+    height: 200px;
+    width: 200px;
+    border-radius: 4px;
+    background: @homeColor;
+}

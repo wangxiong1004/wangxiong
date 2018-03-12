@@ -1,0 +1,25 @@
+postCSS
+    -- 转化css工具。处理css的工具
+autoprefixer
+    浏览器前缀
+CSS-nano
+    优化css，压缩css
+CSS-next
+    使用未来的css的语法
+    css varibles
+    custom selectors
+    calc()
+
+安装
+    npm install postcss postcss-loader autoprefixer cssnano postcss-cssnext --save-dev
+
+    npm istall cosmiconfig postcss-load-config --save-dev
+
+broswerslist
+所有插件共用配置
+    package.json
+    .broswerslistrc
+
+postcss-import
+postcss-url
+postcss-assets

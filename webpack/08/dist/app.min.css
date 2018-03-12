@@ -1,0 +1,24 @@
+
+body {
+    font-size: 30px;
+}
+
+
+.src-css-common_bigBox_PK_Jy {
+    border: 3px solid darkcyan;
+}html {
+  background: #999;
+}
+.src-css-base_box_3WjJS {
+  /*会在前面加载*/
+  height: 200px;
+  width: 200px;
+  border-radius: 4px;
+  background: #999;
+}
+body {
+  font-size: 30px;
+}
+.src-css-common_bigBox_PK_Jy {
+  border: 3px solid darkcyan;
+}
