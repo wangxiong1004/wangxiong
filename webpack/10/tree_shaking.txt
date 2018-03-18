@@ -1,0 +1,24 @@
+JS Tree Shaking
+CSS Tree Sharking
+
+使用场景
+    常规优化 
+    引入第三方库的某一功能
+
+JS Tree Shaking
+    webpack.optimize.uglifyJS
+
+lodash tree Shaking
+    lodash  -- 不是模块方式书写，不能使用
+    lodash-es -- 模块化写法， 也无法使用
+
+    借助babel-plugin: babel-plugin-lodash -- 可以使用
+    cnpm i babel-loader babel-core babel-preset-env babel-plugin-lodash -D
+
+
+CSS Tree Shaking
+    purify css -- https://github.com/purifycss/putifycss
+    purifycss-webpack
+
+    options
+        paths: glob.sync([]) -- npm install glob-all --save-dev
