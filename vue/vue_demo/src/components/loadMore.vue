@@ -2,7 +2,7 @@
   <div>
     <mt-loadmore :top-method="loadTop" @top-status-change="handleTopChange">
       <ul>
-        <li v-for="item in list">{{ item }}</li>
+        <li v-for="(item, index) in list" :key="index">{{ item }}</li>
       </ul>
       <div slot="top" class="mint-loadmore-top">
         <span v-show="topStatus !== 'loading'" :class="{ 'rotate': topStatus === 'drop' }">↓</span>

@@ -1,0 +1,30 @@
+webpack watch mode
+webpack-dev-server
+express + webpack-dev-middleware
+
+webpack watch mode
+    webpack -watch
+    webpack -w
+
+    webpack -w --propress --display-reasons --color
+
+webpack-dev-server
+    live reloading
+    路径重定向
+    https
+    浏览器中显示编译错误
+    接口代理
+    模块热更新
+
+配置
+    devServer
+        inline
+        contentBase
+        port
+        historyApiFallback
+        https
+        proxy
+        hot
+        openpage
+        lazy
+        overlay

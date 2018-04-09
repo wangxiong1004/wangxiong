@@ -2,7 +2,7 @@
     <div>
         <div class="page-infinite-wrapper" ref="wrapper" :style="{ height: wrapperHeight + 'px' }">
             <ul class="page-infinite-list" v-infinite-scroll="loadMore" infinite-scroll-disabled="loading" infinite-scroll-distance="50">
-                <li v-for="item in list" class="page-infinite-listitem">{{ item }}</li>
+                <li v-for="(item, index) in list" :key="index" class="page-infinite-listitem">{{ item }}</li>
             </ul>
             <p v-show="loading" class="page-infinite-loading">
                 <mt-spinner type="fading-circle"></mt-spinner>

@@ -1,0 +1,19 @@
+自动生成html
+场景优化
+
+HtmlWebpackPlugin
+    options
+        template -- 模版文件
+        filename -- 文件名
+        minify -- 是否压缩
+        chunks -- 指定页面
+        inject -- 
+
+html引入图片
+    html-loader
+        options 
+            attr: [img:src]
+
+提前载入webpack加载代码
+    inline-manifest-webpack-plugin
+    html-webpack-inline-chunk-plugin

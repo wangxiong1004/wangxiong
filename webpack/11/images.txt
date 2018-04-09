@@ -12,3 +12,45 @@
         img-loader
     base64编码
         url-loader
+
+第三方js库
+    webpack.providePlugin
+    imports-loader
+    window
+
+1.下载模块--配置
+npm install jquery --save
+new webpack.ProvidePlugin({
+    $: 'jquery'
+})
+
+2.直接页面通过<script>标签引入
+
+3.本地js库，配置别名
+|- src/libs/jquery.min.js
+resolve: {
+    alias: {
+        jquery$: path.resolve(__dirname, 'src/libs/jquery.min.js')
+    }
+}
+
+new webpack.ProvidePlugin({
+    $: 'jquery'
+})
+
+4.imports-loader
+{
+    test: path.resolve(__dirname, 'src/app.js'),
+    use: [{
+        loader: 'imports-loader',
+        options: {
+            $: 'jquery'
+        }
+    }]
+}
+
+resolve: {
+    alias: {
+        jquery$: path.resolve(__dirname, 'src/libs/jquery.min.js')
+    }
+}

@@ -97,7 +97,21 @@ module.exports = {
                     name: '[name]-[hash:5].min.[ext]'
                 }
             }]
+        }, {
+            test: path.resolve(__dirname, 'src/app.js'),
+            use: [{
+                loader: 'imports-loader',
+                options: {
+                    $: 'jquery'
+                }
+            }]
         }]
+    },
+
+    resolve: {
+        alias: {
+            jquery$: path.resolve(__dirname, 'src/libs/jquery.min.js')
+        }
     },
 
     plugins: [
@@ -112,6 +126,10 @@ module.exports = {
                 path.join(__dirname, './src/*.js')
             ])
         }),
+
+        // new webpack.ProvidePlugin({
+        //     $: 'jquery'
+        // }),
 
         new webpack.optimize.UglifyJsPlugin()
     ]

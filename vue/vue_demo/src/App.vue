@@ -1,43 +1,30 @@
 <template>
   <div id="app">
-  
-    <navbar></navbar>
+      <router-link to='/user'>user</router-link>
+      <router-link to='/login'>login</router-link>
+
+      <div>
+        <router-view></router-view>
+      </div>
   </div>
 </template>
 
 <script>
-  import { Toast } from 'mint-ui';
-  import LoadMore from './components/loadMore.vue';
-  import navbar from './components/navbar.vue'
+  // import { Toast } from 'mint-ui';
+  // import LoadMore from './components/loadMore.vue';
+  // import navbar from './components/navbar.vue'
 
 export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App',
-      instance: ""
     }
   },
   methods: {
-    toast() {
-      var instance = Toast({
-        message: '操作成功',
-        position: 'bottom',
-        iconClass: 'icon icon-success',
-        duration: 100000
-      });
-
-      setTimeout(function() {
-        instance.close();
-      }, 2000)
-    },
-    close() {
-
-    }
+   
   },
   components: {
-    loadmore: LoadMore,
-    navbar
+   
   }
 }
 </script>
