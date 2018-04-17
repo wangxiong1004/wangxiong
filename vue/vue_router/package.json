@@ -1,8 +1,8 @@
 {
-  "name": "vue_demo",
+  "name": "vue_router",
   "description": "A Vue.js project",
   "version": "1.0.0",
-  "author": "wangxiong1004 <77302232@qq.com>",
+  "author": "",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -10,11 +10,8 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
-    "axios": "^0.18.0",
-    "mint-ui": "^2.2.13",
     "vue": "^2.5.11",
-    "vue-router": "^3.0.1",
-    "vuex": "^3.0.1"
+    "vue-router": "^3.0.1"
   },
   "browserslist": [
     "> 1%",
@@ -24,7 +21,6 @@
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
-    "babel-plugin-component": "^1.1.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-3": "^6.24.1",
     "cross-env": "^5.0.5",

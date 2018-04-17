@@ -4,8 +4,8 @@
     "target": "es5",
     "allowJs": true,
     "typeRoots": [  // 查找声明文件
-      "./node_modules/@type",
-      "./typings/modules"
+      "./node_modules/@type"
+//    "./typings/modules"
     ]
   },
   "include": [

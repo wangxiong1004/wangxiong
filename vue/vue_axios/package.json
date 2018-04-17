@@ -1,8 +1,8 @@
 {
-  "name": "vux",
+  "name": "vue_axios",
   "description": "A Vue.js project",
   "version": "1.0.0",
-  "author": "wangxiong1004 <77302232@qq.com>",
+  "author": "webwangxiong@163.com",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "vue": "^2.5.11"
+    "vue": "^2.5.11",
+    "vuex": "^3.0.1"
   },
   "browserslist": [
     "> 1%",
@@ -26,9 +27,10 @@
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.4",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
     "vue-loader": "^13.0.5",
     "vue-template-compiler": "^2.4.4",
-    "vuex": "^3.0.1",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.9.1"
   }
