@@ -65,43 +65,14 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-//import * as _ from 'lodash';
-//_.chunk([1, 2, 3, 4, 5], 2);
-// 基础类型
-var isDore = false;
-var num = 10;
-var names = "zhangsan";
-var sex = "boy";
-var job = names + " sex is " + sex;
-var arr = [1, 2, 3, 4];
-var list = [1, 2, 3];
-var x;
-x = ["shanghai", 20];
-x[3] = 0;
-var Color;
-(function (Color) {
-    Color[Color["red"] = 0] = "red";
-    Color[Color["green"] = 1] = "green";
-    Color[Color["blue"] = 2] = "blue";
-})(Color || (Color = {}));
-;
-var c = Color.green;
-console.log(c); // 1
-//enum Color {Red = 1, Green, Blue}
-//let c: Color = Color.Green;
-//enum Color {Red = 1, Green = 2, Blue = 4}
-//let c: Color = Color.Green;
-var notSure = 4;
-notSure = "can i use";
-var lists = [1, true, "free"];
-lists[1] = 100;
-var str = undefined;
-var obj = null;
-function warnUser() {
-    alert("This is my warning message");
-}
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (immutable) */ __webpack_exports__["default"] = printMe;
+function printMe() {
+    console.log('I get called from print.js!');
+};
 
 
 /***/ })

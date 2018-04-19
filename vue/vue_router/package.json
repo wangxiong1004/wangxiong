@@ -2,7 +2,11 @@
   "name": "vue_router",
   "description": "A Vue.js project",
   "version": "1.0.0",
+<<<<<<< HEAD
   "author": "wangxiong1004 <77302232@qq.com>",
+=======
+  "author": "",
+>>>>>>> 8b81a1a095efa6e0c8d736c493ce793ecf6f02e6
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -10,7 +14,10 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
+<<<<<<< HEAD
     "mint-ui": "^2.2.13",
+=======
+>>>>>>> 8b81a1a095efa6e0c8d736c493ce793ecf6f02e6
     "vue": "^2.5.11",
     "vue-router": "^3.0.1"
   },

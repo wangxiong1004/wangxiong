@@ -4,10 +4,14 @@ web/node_modules
 
 web/note/webpack/node_modules
 
+web/**/node_modules
+
 testProject/node_modules
 
-webpack/*/node_modules
+webpack/**/node_modules
 
-vuex/*/node_modules
+vuex/**/node_modules
+
+vue/**/node_modules
 
 */node_modules

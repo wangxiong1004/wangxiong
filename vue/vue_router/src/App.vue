@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div id="app">
     <div class="dola-content">
       <router-view></router-view>
@@ -103,4 +104,26 @@
       }
     }
   }
+=======
+    <div id="app">
+        <router-link to="/user">user</router-link>
+        <router-link to="/login">login</router-link>
+        <router-view></router-view>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: 'app',
+        data() {
+            return {
+
+            }
+        }
+    }
+</script>
+
+<style lang="scss">
+
+>>>>>>> 8b81a1a095efa6e0c8d736c493ce793ecf6f02e6
 </style>
