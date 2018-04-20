@@ -1,5 +1,5 @@
 <template>
-    <section>Login</section>
+    <section class="dola-more">more</section>
 </template>
 
 <script>

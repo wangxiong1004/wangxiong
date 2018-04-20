@@ -1,6 +1,5 @@
 <template>
-
-    <section>User -- {{ username }} -- {{ $route.params.id }}</section>
+    <section class="dola-user">User -- {{ username }} -- {{ $route.params.id }}</section>
 </template>
 
 <script>
