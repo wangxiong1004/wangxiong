@@ -35,11 +35,11 @@
             return {
                 isNavShow: true,
                 isLogin: false
-            }
+            };
         },
         watch: {
             "$route"(to, from) {
-                if (to.name === 'login') {
+                if (to.name === 'login' || to.name === 'register' || to.name === 'forgetpass') {
                 	this.isNavShow = false;
                 } else {
                     this.isNavShow = true;
@@ -47,7 +47,8 @@
             }
         },
         mounted() {
-            if (this.$router.history.current.name === 'login') {
+            const loadingRouter = this.$router.history.current.name;
+            if (loadingRouter === 'login' || loadingRouter === 'register' || loadingRouter === 'forgetpass') {
                 this.isNavShow = false;
             }
         }
@@ -62,30 +63,30 @@
         background: #fafafa;
         .dola-content {
             height: 100%;
-            .bottom-nav {
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                z-index: 100;
-                width: 100%;
-                max-width: 640px;
-                margin: 0 auto;
-                height: 49px;
-                display: flex;
-                border-top: 1px solid #d4d4d4;
-                background: #f9f9f9;
-                .dola-nav {
-                    flex: 1;
-                    display: block;
-                    text-align: center;
-                    color: #555;
-                    .nav-text {
-                        font-size: 11px;
-                    }
-                    &.active {
-                        color: #f63;
-                    }
+        }
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            width: 100%;
+            max-width: 640px;
+            margin: 0 auto;
+            height: 49px;
+            display: flex;
+            border-top: 1px solid #d4d4d4;
+            background: #f9f9f9;
+            .dola-nav {
+                flex: 1;
+                display: block;
+                text-align: center;
+                color: #555;
+                .nav-text {
+                    font-size: 11px;
+                }
+                &.active {
+                    color: #f63;
                 }
             }
         }
