@@ -29,6 +29,11 @@ footer, header, menu, nav, section {
     display: block;
 }
 
+input {
+  border: none;
+  outline: none;
+}
+
 body {
     line-height: 1;
 }
