@@ -35,11 +35,11 @@
             return {
                 isNavShow: true,
                 isLogin: false
-            }
+            };
         },
         watch: {
             "$route"(to, from) {
-                if (to.name === 'login') {
+                if (to.name === 'login' || to.name === 'register' || to.name === 'forgetpass') {
                 	this.isNavShow = false;
                 } else {
                     this.isNavShow = true;
@@ -47,7 +47,8 @@
             }
         },
         mounted() {
-            if (this.$router.history.current.name === 'login') {
+            const loadingRouter = this.$router.history.current.name;
+            if (loadingRouter === 'login' || loadingRouter === 'register' || loadingRouter === 'forgetpass') {
                 this.isNavShow = false;
             }
         }

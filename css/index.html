@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>文本渐变</title>
+        <style type="text/css">
+            body {
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 3vw;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+
+    <body>
+        <style type="text/css">
+            .text01 {
+                padding: 5px 10px;
+                background-image: -webkit-gradient(linear, 100% 0, 0 0, from(deeppink), to(dodgerblue));
+                background-image: -webkit-linear-gradient(to right, deeppink, dodgerblue);
+                background-image: -moz-linear-gradient(to right, deeppink, dodgerblue);
+                background-image: -o-linear-gradient(to right, deeppink, dodgerblue);
+                background-image: linear-gradient(to right, deeppink, dodgerblue);
+                -webkit-background-clip: text;
+                color: transparent;
+            }
+        </style>
+        <p class="text text01">单个词或单行文本渐变填充效果单个词或单行文本渐变填充效果单个词或单行文本渐变填充效果单个词或单行文本渐变填充效果单个词或单行文本渐变填充效果单个词或单行文本渐变填充效果</p>
+
+        <style type="text/css">
+            p.text02 {
+                max-width: 80vw;
+            }
+
+            p.text02 {
+                display: inline-block;
+            }
+
+            span, em {
+                line-height: 2;
+                background-image: -webkit-linear-gradient(135deg, deeppink, dodgerblue);
+                background-image: -moz-linear-gradient(135deg, deeppink, dodgerblue);
+                background-image: -o-linear-gradient(135deg, deeppink, dodgerblue);
+                background-image: linear-gradient(135deg, deeppink, dodgerblue);
+                background-clip: text;
+                -webkit-background-clip: text;
+                box-decoration-break: clone;
+                -webkit-box-decoration-break: clone;
+                color: transparent;
+            }
+
+            em {
+                text-decoration-line: underline;
+                -webkit-text-decoration-line: underline;
+                text-decoration-color: black;
+                -webkit-text-decoration-color: black;
+                padding: 0 6px;
+            }
+        </style>
+        <h1>段落<em>每行</em>文本渐变填充效果</h1>
+        <p class="text02"><span>W3cplus是一个致力于推广国内前端行业的技术博客。它以探索为己任，不断活跃在行业技术最前沿，努力提供高质量前端技术博文；其文章范围广泛，主要以CSS3、HTML5、JavaScript、Vue、React、Mobile、动画等教程、译文和案例为主。</span></p>
+    </body>
+
+</html>

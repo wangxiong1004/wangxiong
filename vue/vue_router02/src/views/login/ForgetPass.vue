@@ -14,7 +14,7 @@
                     </li>
                 </ul>
                 <div class="forget-pass-wrapper">
-                    <router-link :to="{ name:'forgetpass' }" class="forget-pass">忘记密码</router-link>
+                    <router-link :to="{path:'/user/forget_loginpass'}" class="forget-pass">忘记密码</router-link>
                 </div>
             	<input type="submit" value="登录" class="dola-login-btn dola-login-submit" @click.prevent="loginWeb" />
             	<router-link :to="{ name:'register' }" class="dola-login-btn dola-register-btn">注册</router-link>
@@ -30,7 +30,7 @@
         name: 'login',
         data() {
             return {
-                topBarName: '登录',
+                topBarName: '忘记密码',
                 passType: 'password',
                 isShowPassClass: ''
             }
