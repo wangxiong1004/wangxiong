@@ -138,7 +138,7 @@
                                 top: 50%;
                                 right: 0;
                                 margin-top: -21px;
-                                width: 140px;
+                                width: 100px;
                                 height: 42px;
                                 background: #ccc;
                             }

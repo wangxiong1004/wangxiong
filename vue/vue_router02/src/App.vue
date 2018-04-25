@@ -51,6 +51,8 @@
             if (loadingRouter === 'login' || loadingRouter === 'register' || loadingRouter === 'forgetpass') {
                 this.isNavShow = false;
             }
+
+            this.isLogin = true;
         }
     }
 </script>

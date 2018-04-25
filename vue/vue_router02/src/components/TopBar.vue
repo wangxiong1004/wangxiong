@@ -1,7 +1,7 @@
 <template>
     <header class="top-bar">
         <div class="top-bar-left">
-            <a href="/">
+            <a href="javascript:;" @click="back">
                 <button class="top-bar-btn">
                     <span class="top-bar-icon">
                         <i class="tob-bar-back"></i>
@@ -20,6 +20,11 @@
         props: {
             topBarName: {
                 type: String
+            }
+        },
+        methods: {
+            back() {
+                this.$router.go(-1);
             }
         }
     }
