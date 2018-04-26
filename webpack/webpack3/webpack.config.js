@@ -3,8 +3,10 @@
 const path = require('path');
 
 // 插件
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');   // html插件
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const UglifyjsWebpackPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports =  {
     entry : {
@@ -13,7 +15,8 @@ module.exports =  {
 
     output: {
         filename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '/'
     },
 
     module: {
@@ -38,12 +41,19 @@ module.exports =  {
             favicon: './favicon.ico'
         }),
 
-        new CleanWebpackPlugin(['dist'])
+        new CleanWebpackPlugin(['dist']),
+
+        new UglifyjsWebpackPlugin(),
+
+        new webpack.NamedModulesPlugin(),
+
+        new webpack.HotModuleReplacementPlugin()
     ],
 
     devtool: 'inline-source-map',    // source map
 
     devServer: {
-        contentBase: './dist'
+        contentBase: './dist',
+        hot: true
     }
 };
