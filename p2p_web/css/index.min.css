@@ -110,6 +110,62 @@ button:-moz-focusring, [type="button"]:-moz-focusring, [type="reset"]:-moz-focus
 .clearfix:after {
   clear: both; }
 
+.border-top-1px:before {
+  content: ' ';
+  display: block;
+  border-top: 1px solid #666;
+  position: absolute;
+  left: 0;
+  right: 0; }
+
+.border-top-1px {
+  position: relative; }
+.border-top-1px:before {
+  top: 0; }
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
+  .border-top-1px:before {
+    -webkit-transform: scaleY(0.7);
+    transform: scaleY(0.7);
+    -webkit-transform-origin: left top; } }
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  .border-top-1px:before {
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: left top; } }
+@media only screen and (-webkit-min-device-pixel-ratio: 3) {
+  .border-top-1px:before {
+    -webkit-transform: scaleY(0.3);
+    transform: scaleY(0.3);
+    -webkit-transform-origin: left top; } }
+.border-bottom-1px:before {
+  content: ' ';
+  display: block;
+  border-top: 1px solid #666;
+  position: absolute;
+  left: 0;
+  right: 0; }
+
+.border-bottom-1px {
+  position: relative; }
+.border-bottom-1px:before {
+  bottom: 0; }
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
+  .border-bottom-1px:before {
+    -webkit-transform: scaleY(0.7);
+    transform: scaleY(0.7);
+    -webkit-transform-origin: left bottom; } }
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  .border-bottom-1px:before {
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: left bottom; } }
+@media only screen and (-webkit-min-device-pixel-ratio: 3) {
+  .border-bottom-1px:before {
+    -webkit-transform: scaleY(0.3);
+    transform: scaleY(0.3);
+    -webkit-transform-origin: left bottom; } }
 .dola-container {
   width: 1200px;
   margin-left: auto;

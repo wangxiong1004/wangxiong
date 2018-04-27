@@ -1,7 +1,5 @@
 @charset 'utf-8';
-// 缩放
-// @include onepx('.myonepx');
-// @include onepx('.hello', 'bottom', 'after', '#777');
+
 @mixin _prefixDpr($selector, $position: 'top', $pseudo: 'before', $dpr: '2') {
     @media only screen and (-webkit-min-device-pixel-ratio: $dpr) {
         @if $dpr=='1.5' {
@@ -43,7 +41,7 @@
     }
 }
 
-@mixin onepx($selector, $position: 'top', $pseudo: 'before', $color: #666) {
+@mixin border-1px($selector, $position: 'top', $color: #666, $pseudo: 'before') {
     #{$selector}:#{$pseudo} {
         content: ' ';
         display: block;
@@ -55,10 +53,10 @@
     #{$selector} {
         position: relative;
         &:#{$pseudo} {
-            @if #{$position}=='top' {
+            @if $position=='top' {
                 top: 0;
             }
-            @else if #{$position}=='bottom' {
+            @else if $position=='bottom' {
                 bottom: 0;
             }
         }
@@ -66,43 +64,4 @@
     @include _prefixDpr($selector, $position, $pseudo, '1.5');
     @include _prefixDpr($selector, $position, $pseudo, '2');
     @include _prefixDpr($selector, $position, $pseudo, '3');
-}
-
-// border-image
-// .container {
-//  @include onepx('.myonepx', 'top', '#666', './img/linenew.png');
-// }
-
-// @include onepx('.border-top', 'top');
-// @include onepx('.border-bottom');
-
-@mixin onepx02($selector, $position: bottom, $color: #666, $onepxImgDirname: './img/linenew.png') {
-    #{$selector} {
-        border-#{$position}: 1px solid $color;
-    }
-    @media only screen and (-webkit-min-device-pixel-ratio:2) {
-        #{$selector} {
-            border-#{$position}: none;
-            @if $position=='bottom' {
-                border-width: 0 0 1px 0;
-                -webkit-border-image: url($onepxImgDirname) 0 0 2 0 stretch;
-                border-image: url($onepxImgDirname) 0 0 2 0 stretch;
-            }
-            @else if $position=='top' {
-                border-width: 1px 0 0 0;
-                -webkit-border-image: url($onepxImgDirname) 2 0 0 0 stretch;
-                border-image: url($onepxImgDirname) 2 0 0 0 stretch;
-            }
-            @else if $position=='right' {
-                border-width: 0 1px 0 0;
-                -webkit-border-image: url($onepxImgDirname) 0 2 0 0 stretch;
-                border-image: url($onepxImgDirname) 0 2 0 0 stretch;
-            }
-            @else if $position=='left' {
-                border-width: 0 0 0 1px;
-                -webkit-border-image: url($onepxImgDirname) 0 0 0 2 stretch;
-                border-image: url($onepxImgDirname) 0 0 0 2 stretch;
-            }
-        }
-    }
 }
