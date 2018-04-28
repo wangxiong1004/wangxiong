@@ -1,0 +1,37 @@
+@charset 'utf-8';
+
+@mixin border-1px($color, $pos: 'bottom', $posit: 'relative') {
+
+    @if $posit == 'relative' {
+        position: relative;
+    } @else if $posit == 'fixed' {
+        position: fixed;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+//      bottom: 0;
+        width: 100%;
+        border-top: 1px solid $color;
+    }
+    @if $pos == 'bottom' {
+        &::after {
+            bottom: 0;
+        }
+    } @else if $pos == 'top' {
+        &::after {
+            top: 0;
+        }
+    }
+
+}
+
+@mixin boder-none() {
+    &::after {
+        content: '';
+        border: none;
+    }
+}

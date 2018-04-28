@@ -3,7 +3,7 @@
         <div class="dola-content">
             <router-view></router-view>
         </div>
-        <div class="bottom-nav" v-if="isNavShow">
+        <div class="bottom-nav border-1px" v-if="isNavShow">
             <router-link :to="{name: 'home'}" class="dola-nav nav-home">
                 <img src="" class="nav-img" />
                 <p class="nav-text">首页</p>
@@ -58,6 +58,8 @@
 </script>
 
 <style lang="scss">
+    @import './static/sass/index.scss';
+
     .dola-app {
         max-width: 640px;
         height: 100%;
@@ -77,8 +79,8 @@
             margin: 0 auto;
             height: 49px;
             display: flex;
-            border-top: 1px solid #d4d4d4;
             background: #f9f9f9;
+            @include border-1px(#d4d4d4, 'top', 'fixed');
             .dola-nav {
                 flex: 1;
                 display: block;

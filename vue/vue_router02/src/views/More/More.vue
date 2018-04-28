@@ -6,25 +6,25 @@
                 <img src="https://www.dolabank.club/static/images/wechat/about-login.png" alt="" />
             </div>
             <ul class="about-lists">
-                <li class="list list01">
+                <li class="list list01 border-1px">
                     <router-link :to="{ name: 'notice' }" class="item">公告</router-link>
                     <!--<a href="javascript:;" class="item">公告</a>-->
                 </li>
-                <li class="list list02">
+                <li class="list list02 border-1px">
                     <router-link :to="{ name: 'notice' }" class="item">媒体报道</router-link>
                 </li>
-                <li class="list list03">
+                <li class="list list03 border-1px">
                     <router-link :to="{ name: 'notice' }" class="item">网贷课堂</router-link>
                 </li>
             </ul>
             <ul class="about-lists">
-                <li class="list list01">
+                <li class="list list01 border-1px">
                     <router-link :to="{ name: 'notice' }" class="item">关于我们</router-link>
                 </li>
-                <li class="list list02">
+                <li class="list list02 border-1px">
                     <router-link :to="{ name: 'notice' }" class="item">联系客服</router-link>
                 </li>
-                <li class="list list03">
+                <li class="list list03 border-1px">
                     <router-link :to="{ name: 'notice' }" class="item">常见问题</router-link>
                 </li>
             </ul>
@@ -53,6 +53,8 @@
 </script>
 
 <style lang="scss">
+    @import '../../static/sass/index.scss';
+
     .dola-more {
         height: 100%;
         background-color: #f4f1ef;
@@ -76,14 +78,14 @@
                 .list {
                     height: 50px;
                     line-height: 50px;
-                    border-bottom: 1px solid #e5e5e5;
+                    @include border-1px(#e5e5e5);
                     .item {
                         display: block;
                         font-size: 15px;
                         color: #333;
                     }
                     &:last-of-type {
-                        border-bottom: none;
+                        @include boder-none();
                     }
                 }
             }
