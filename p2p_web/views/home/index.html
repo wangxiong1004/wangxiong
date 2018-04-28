@@ -24,5 +24,66 @@
             <li class="border-bottom-1px">打好的哈发货撒回复啥客户方大家都在发</li>
         </ul>
 
+
+        <script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../js/util.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../js/des.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript">
+        	var Codekey = Util.getRrandomStr();
+            var paramsdata = {
+            }
+            var params = Util.getParams('pc', '', paramsdata);
+            params = Util.encryption(Codekey, params, 'code');
+            $.ajax({
+                type: "get",
+                url: 'https://www.dolabank.com/apigateway/v1/homepage/getOperationReports',
+                headers: {
+                    "X-Dola-Time": Util.getSeconds(),
+                    "X-Dola-ClientID": Util.getGuid(),
+                    'X-Dola-Code': Codekey
+                },
+                data: {
+                    data: params
+                },
+                success: function (res, status, xhr) {
+                    var key = xhr.getResponseHeader("X-Dola-Edoc");
+                    var data = res;
+                    var str = Util.decrypt(key, data, 'code')
+                    var data = JSON.parse(str);
+                    console.log(data);
+                    if (data.code === 0) {
+                    }
+                },
+                error: function () {
+                }
+            });
+
+            function ajaxData(options) {
+
+                var type = options.type || 'get';
+                var platform = options.platform || 'pc';
+
+
+                var Codekey = Util.getRrandomStr();
+                var paramsdata = {
+                }
+                var params = Util.getParams(platform, '', paramsdata);
+                params = Util.encryption(Codekey, params, 'code');
+
+                $.ajax({
+                	type: type,
+                	url: options.url,
+                	async: options.async,
+                	headers: {
+                        "X-Dola-Time": Util.getSeconds(),
+                        "X-Dola-ClientID": Util.getGuid(),
+                        'X-Dola-Code': Codekey
+                    },
+                    success: function(res, status, xhr) {
+
+                    }
+                });
+            }
+        </script>
 	</body>
 </html>
