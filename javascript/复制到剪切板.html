@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>复制到剪切板</title>
+    <style>
+        .copy-content {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: inset 2px 2px 10px #ccc;    
+            text-align: center;
+        }
+        .copy-btn {
+            width: 72px;
+            margin-top: 36px;
+            border-radius: 4px;
+            background-color: #53a5ec;
+            color: #fff;
+            text-align: center;
+            font-size: 14px;
+            padding: 0.8em 1.6em;
+            user-select: none;
+            -webkit-appearance: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="copy-content" id="copy_cont">https://www.dolabank.com</div>
+    <div class="copy-btn" id="copy_btn">复制</div>
+
+    <script>
+        var copyBtn = document.querySelector('#copy_btn');
+
+        copyBtn.addEventListener("click", function() {
+            var copyContent = document.querySelector('#copy_cont');
+            copy(copyContent, function() {
+                console.log('复制成功');
+            });
+        }, false);
+
+        function copy(el, fn) {
+            var range = document.createRange();
+            var end = el.childNodes.length;
+            range.setStart(el, 0);
+            range.setEnd(el, end);
+
+            var selection = window.getSelection(); 
+            selection.removeAllRanges(); 
+            selection.addRange(range); 
+            document.execCommand("copy",false,null);
+            selection.removeRange(range);
+
+            if (fn !== 'undefined' && typeof fn === 'function') {
+                fn();
+            }
+        }
+    </script>
+</body>
+</html>
