@@ -53,12 +53,14 @@ layui.define(['jquery'], function(exports) {
         });
     });
 
-    layui.data('test', {
-        key: 'name',
-        value: 'zhangsan'
-    });
+    // localStorage
+    // layui.data('test', {
+        // key: 'name',
+        // value: 'zhangsan'
+    // });
 
-    console.log(layui.data('test').name);
+    console.log(layui.cache);
+
 
     var arr = [2, 3, 4, 9, 8, 9, 105, 15, 111, 22];
 
