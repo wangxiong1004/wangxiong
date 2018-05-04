@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	    <style type="text/css">
+	    	.parent01 {text-align: center;}
+	    </style>
+	    <div class="parent parent01"><span class="text">行内元素水平居中</span></div>
+
+        <style type="text/css">
+            .parent {width: 200px;height: 200px;background: #f00;margin-bottom: 20px;}
+        	.parent02 {position: relative;}
+        	.child {width: 100px;height: 100px;background: #ccc;}
+        	.child02 {position: absolute;left: 50%;transform: translateX(-50%);}
+        </style>
+        <div class="parent parent02">
+            <div class="child child02"></div>
+        </div>
+
+        <style type="text/css">
+        	.parent03 {display: flex;justify-content: center;}
+        </style>
+        <div class="parent parent03">
+            <div class="child child03"></div>
+        </div>
+
+        <style type="text/css">
+        	.parent04{
+                position: relative;
+            }
+            .child04 {
+                position: absolute;
+                margin: auto;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+            }
+        </style>
+        <div class="parent parent04">
+            <div class="child child04"></div>
+        </div>
+
+        <style type="text/css">
+       	    .parent05 {
+       	        height: 40px;
+       	        line-height: 20px;
+       	    }
+        </style>
+        <div class="parent parent05">
+            多行文本<br />
+            多行文本
+        </div>
+	</body>
+</html>
