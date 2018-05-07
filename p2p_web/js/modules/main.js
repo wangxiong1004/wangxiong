@@ -46,7 +46,7 @@ layui.define(['jquery'], function(exports) {
             var utils = layui.utils;
             utils.getAjaxData({
                 url: api.appIndex,
-                callback: function(data) {
+                success: function(data) {
                     console.log(data);
                 }
             });

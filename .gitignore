@@ -1,4 +1,5 @@
 .project
+.idea
 
 web/node_modules
 

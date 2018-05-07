@@ -238,6 +238,8 @@ layui.define(['jquery'], function(exports) {
         },
         /**
          * 获取域名
+         * @param ''
+         * @returns {*}
          */
         getDomain: function () {
             var url = "",
@@ -277,8 +279,10 @@ layui.define(['jquery'], function(exports) {
             return domainObj;
 
         },
-        /*
+        /**
          * 获取链接参数
+         * @param name
+         * @returns { string }
          */
         getQueryString: function(name) {
             var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
@@ -293,19 +297,20 @@ layui.define(['jquery'], function(exports) {
                 return null;
             }
         },
-        /*
-        * options
-        * url:
-        * platform: 'pc'
-        * type: 'get'
-        * data: {},
-        * callback: function(data) {}
-        */
+        /**
+         * 异步获取数据
+         * @param options
+         * url:
+         * platform: 'pc' 操作平台
+         * type: 'get' 请求方式
+         * async: 是否异步
+         * data: {},
+         * success: function(data) {}
+         */
         getAjaxData: function(options) {
             var that = this;
 
             var url = options.url || '';
-//          var async = options.async || true;
             var platform = options.platform || 'pc';
             var type = options.type || 'get';
             var token = that.getCookie('token');
@@ -331,8 +336,8 @@ layui.define(['jquery'], function(exports) {
                     var str = that.decrypt(key, data, 'code')
                     var data = JSON.parse(str);
 
-                    if (options.callback && typeof options.callback === 'function') {
-                        options.callback(data);
+                    if (options.success && typeof options.success === 'function') {
+                        options.success(data);
                     }
 
                 },
@@ -341,13 +346,6 @@ layui.define(['jquery'], function(exports) {
                         options.error(data);
                     }
                 }
-            });
-        },
-        errorMsg: function(msg) {
-            layui.use('layer', function () {
-                var layer = layui.layer;
-
-                layer.msg(msg);
             });
         }
     });
