@@ -13,4 +13,5 @@ layui.define(['jquery', 'api', 'methods'], function(exports) {
 
 
     exports('a1805', {});
-})
+});
+
