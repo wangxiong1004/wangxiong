@@ -1,3 +1,6 @@
+减少代码冗余
+提高加载速度
+
 插件
     CommonsChunkPlugin
     webpack.optimize.CommonsChunkPlugin
@@ -8,12 +11,12 @@
     ]
 
 参数
-    options.name or options.names: chunk的名称
+    options.name or options.names: 提取chunk的名称
     options.filename -- 公用代码打包后的文件名
-    options.minChunks -- 最小出现的次数 Infinity
+    options.minChunks -- 公用代码最小出现的次数/Infinity(不会打包任何的代码)/fun(自定义逻辑)
     options.chunks -- 提取代码的范围
     options.children -- 是不是在entry的子模块中查找
-    options.deepChildren
+    options.deepChildren -- 所有模块中查找
     options.async -- 异步的公共代码块
 
 场景

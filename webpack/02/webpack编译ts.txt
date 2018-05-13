@@ -12,7 +12,7 @@ typescriptlang.org/tslang.cn
 Microsoft
 
 使用
-typescript-loader
+ts-loader
 
 安装
 npm install typescript ts-loader --save-dev   // 官方loader
@@ -32,6 +32,7 @@ exclude
 
 ts使用第三方库，安装声明文件
 npm install @types/lodash
+npm install @types/vue
 
 卸载
 npm uninstall @types/lodash

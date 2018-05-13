@@ -15,4 +15,4 @@ vuex/**/node_modules
 
 vue/**/node_modules
 
-*/node_modules
+**/node_modules

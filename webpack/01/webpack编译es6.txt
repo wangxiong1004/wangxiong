@@ -14,7 +14,7 @@ babel presets -- 打包规范
 es2015
 es2016
 es2017
-env
+env -- 包含前面三个版本
 babel-preset-react
 babel-preset-stage 0 - 3
 
@@ -24,8 +24,8 @@ npm install babel-preset-env --save-dev   // 正式版
 
 targets -- 根据指定目标选定哪些语法编译
 targets.browsers : 浏览器
-targets.browsers: "last 2 versions"
-targets.browsers: "> 1%"
+targets.browsers: "last 2 versions" 最后两个版本
+targets.browsers: "> 1%"    大于全球占有率1%
 
 数据来源
 browserslist
