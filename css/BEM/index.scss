@@ -1,0 +1,63 @@
+@charset 'utf-8';
+
+.l-margin {
+    margin: 20px;
+}
+
+input {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+// button
+.button {
+    display: block;
+    width: 142px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #fea721;
+    border-radius: 2px;
+    font-size: 0;
+    &__icon {
+        display: inline-block;
+        vertical-align: top;
+        width: 45px;
+        height: 40px;
+        background: #f60 url("https://dolabank-apk.oss-cn-shenzhen.aliyuncs.com/dolabank/static/web/dist/images/standard_powder/join_icon.png") center no-repeat;
+        border-radius: 2px 0 0 2px;
+    }
+    &__text {
+        display: inline-block;
+        width: 97px;
+        text-align: center;
+        font-size: 16px;
+        color: #fff;
+    }
+}
+
+.form-button {
+    display: block;
+    width: 346px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #ff6700;
+    &:hover {
+        background-color: #ea6912;
+    }
+}
+
+.l-form-buttom {
+    width: 346px;
+    height: 48px;
+    line-height: 48px;
+    &__icon {
+        width: 80px;
+        height: 48px;
+    }
+    &__text {
+        width: 266px;
+    }
+}
