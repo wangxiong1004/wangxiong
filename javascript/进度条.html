@@ -5,17 +5,17 @@
         <meta charset="UTF-8">
         <title></title>
         <style type="text/css">
-        	.progress__container {
-        	    width: 500px;
-        	    height: 20px;
-        	    background-color: #ccc;
-        	    border-radius: 10px;
-        	}
+            .progress__container {
+                width: 500px;
+                height: 20px;
+                background-color: #ccc;
+                border-radius: 10px;
+            }
         </style>
     </head>
 
     <body>
-        <div class="progress__container">
+        <div class="progress__container" id="progress_container">
             <div id="myDiv" style="background-color: lightblue;width: 0;height: 20;line-height: 20px;border-radius: 10px;">0%</div>
         </div>
         <button id="btn">run</button>
@@ -29,15 +29,16 @@
                 myDiv.style.width = 0;
                 timer = setInterval(function() {
                     if (parseInt(myDiv.style.width) < 500) {
-                    	myDiv.style.width = parseInt(myDiv.style.width) + 5 + 'px';
-                    	myDiv.innerHTML = parseInt(myDiv.style.width)/5 + '%';
+                        myDiv.style.width = parseInt(myDiv.style.width) +
+                            5 + 'px';
+                        myDiv.innerHTML = parseInt(myDiv.style.width) /
+                            5 + '%';
                     } else {
                         clearInterval(timer);
                     }
                 }, 16);
             }
         </script>
-
 
         <div class="progress__container">
             <div id="myDiv2" style="background-color: lightblue;width: 0;height: 20;line-height: 20px;border-radius: 10px;">0%</div>
@@ -49,33 +50,33 @@
             var btn2 = document.getElementById('btn2');
 
             btn2.onclick = function() {
-//              myDiv2.style.width = 0;
-//
-//
-//              if (!window.requestAnimationFrame) {
-//                  clearInterval(timer);
-//
-//                  timer2 = setInterval(function() {
-//                      if (parseInt(myDiv2.style.width) < 500) {
-//                          myDiv2.style.width = parseInt(myDiv2.style.width) + 5 + 'px';
-//                          myDiv2.innerHTML = parseInt(myDiv2.style.width)/5 + '%';
-//                      } else {
-//                          clearInterval(timer2);
-//                      }
-//                  }, 16);
-//              } else {
-//                  cancelAnimationFrame(timer2);
-//
-//                  timer2 = requestAnimationFrame(function fn2() {
-//                      if (parseInt(myDiv2.style.width) < 500) {
-//                          myDiv2.style.width = parseInt(myDiv2.style.width) + 5 + 'px';
-//                          myDiv2.innerHTML = parseInt(myDiv2.style.width)/5 + '%';
-//                          timer2 = requestAnimationFrame(fn2);
-//                      } else {
-//                          cancelAnimationFrame(timer2);
-//                      }
-//                  })
-//              }
+                //              myDiv2.style.width = 0;
+                //
+                //
+                //              if (!window.requestAnimationFrame) {
+                //                  clearInterval(timer);
+                //
+                //                  timer2 = setInterval(function() {
+                //                      if (parseInt(myDiv2.style.width) < 500) {
+                //                          myDiv2.style.width = parseInt(myDiv2.style.width) + 5 + 'px';
+                //                          myDiv2.innerHTML = parseInt(myDiv2.style.width)/5 + '%';
+                //                      } else {
+                //                          clearInterval(timer2);
+                //                      }
+                //                  }, 16);
+                //              } else {
+                //                  cancelAnimationFrame(timer2);
+                //
+                //                  timer2 = requestAnimationFrame(function fn2() {
+                //                      if (parseInt(myDiv2.style.width) < 500) {
+                //                          myDiv2.style.width = parseInt(myDiv2.style.width) + 5 + 'px';
+                //                          myDiv2.innerHTML = parseInt(myDiv2.style.width)/5 + '%';
+                //                          timer2 = requestAnimationFrame(fn2);
+                //                      } else {
+                //                          cancelAnimationFrame(timer2);
+                //                      }
+                //                  })
+                //              }
 
                 progressBar(myDiv2, 300);
             }
@@ -91,26 +92,32 @@
                 progressEle.style.width = 0;
 
                 if (!window.requestAnimationFrame) {
-                	clearInterval(timer);
+                    clearInterval(timer);
 
-                	timer = setInterval(function() {
+                    timer = setInterval(function() {
 
-                	    if (parseInt(progressEle.style.width) < progressWidth) {
-                            progressEle.style.width = parseInt(progressEle.style.width) + 5 + 'px';
-                            progressEle.innerHTML = parseInt(progressEle.style.width) / 5 + '%';
-                	    } else {
-                	        clearInterval(timer);
-                	    }
-                	}, 16);
+                        if (parseInt(progressEle.style.width) <
+                            progressWidth) {
+                            progressEle.style.width = parseInt(
+                                progressEle.style.width) + 5 + 'px';
+                            progressEle.innerHTML = parseInt(
+                                progressEle.style.width) / 5 + '%';
+                        } else {
+                            clearInterval(timer);
+                        }
+                    }, 16);
 
                 } else {
 
-                    cancelAnimationFrame(timer2);
+                    cancelAnimationFrame(timer);
 
                     timer = requestAnimationFrame(function fn2() {
-                        if (parseInt(progressEle.style.width) < progressWidth) {
-                            progressEle.style.width = parseInt(progressEle.style.width) + 5 + 'px';
-                            progressEle.innerHTML = parseInt(progressEle.style.width)/5 + '%';
+                        if (parseInt(progressEle.style.width) <
+                            progressWidth) {
+                            progressEle.style.width = parseInt(
+                                progressEle.style.width) + 5 + 'px';
+                            progressEle.innerHTML = parseInt(
+                                progressEle.style.width) / 5 + '%';
                             timer = requestAnimationFrame(fn2);
                         } else {
                             cancelAnimationFrame(timer);
@@ -119,6 +126,54 @@
 
                 }
             }
+
+            var progressContainer = document.getElementById('progress_container');
+            console.log(progressContainer.offsetWidth * 0.6)
+
+            progress(progressContainer, myDiv2, 20000, 50000);
+
+            function progress(ele, progressEle, progressIng, progressAll) {
+                var timer;
+                var eleWidth = ele.offsetWidth;
+                var progressBar = progressIng / progressAll;
+
+                progressEle.style.width = 0;
+
+                if (!window.requestAnimationFrame) {
+                    clearInterval(timer);
+
+                    timer = setInterval(function() {
+
+                        if (parseInt(progressEle.style.width) <
+                            parseInt(progressBar * eleWidth)) {
+                            progressEle.style.width = parseInt(
+                                progressEle.style.width) + 5 + 'px';
+                            progressEle.innerHTML = parseInt(
+                                progressEle.style.width) / 5 + '%';
+                        } else {
+                            clearInterval(timer);
+                        }
+                    }, 16);
+                } else {
+                    cancelAnimationFrame(timer);
+
+                    timer = requestAnimationFrame(function fun() {
+                        if (parseInt(progressEle.style.width) <
+                            parseInt(progressBar * eleWidth)) {
+                            progressEle.style.width = parseInt(
+                                progressEle.style.width) + 5 + 'px';
+                            progressEle.innerHTML = parseInt(
+                                progressEle.style.width) / 5 + '%';
+                            timer = requestAnimationFrame(fun);
+                        } else {
+                            cancelAnimationFrame(timer);
+                        }
+                    });
+                }
+            }
+
+        </script>
+        <script type="text/javascript">
 
         </script>
     </body>
