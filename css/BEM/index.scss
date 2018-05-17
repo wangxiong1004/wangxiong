@@ -10,7 +10,7 @@ input {
     cursor: pointer;
 }
 
-// button
+// 按钮 -- button
 .button {
     display: block;
     width: 142px;
@@ -35,6 +35,8 @@ input {
         color: #fff;
     }
 }
+
+.button--primary {}
 
 .form-button {
     display: block;
@@ -61,3 +63,131 @@ input {
         width: 266px;
     }
 }
+
+
+.list__item {
+    width: 150px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    font-size: 16px;
+    color: #757575;
+    border: 1px solid #e5e5e5;
+    &--current {
+        @extend .list__item;
+        border-color: #fea722;
+        color: #ff6700;
+    }
+}
+
+.input__text {
+    width: 346px;
+    height: 52px;
+    line-height: 52px;
+    background-color: #fff;
+    border: 1px solid #dcdcdc;
+}
+
+
+// 菜单 -- menu
+.menu {}
+.menu__item {}
+.menu__item--current {}
+.menu__layout {}
+
+// 导航 -- nav
+.nav {
+    color: #ccc;
+    &__item {
+        color: #e5e5e5;
+        &--active {
+            color: #ff6700;
+        }
+    }
+}
+
+// 规则说明表(散标详情、转让详情、一键购买详情)
+.rule {
+    &__table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        border: 1px solid #e4e4e4;
+    }
+    &__size {
+        font-size: 12px;
+        color: #989898;
+        line-height: 1.5em;
+    }
+    &__layout {
+        border: 1px solid #e4e4e4;
+        padding: 10px 34px;
+    }
+    &--title {
+        @extend .rule__size;
+        @extend .rule__layout;
+        width: 20%;
+    }
+    &--content {
+        @extend .rule__size;
+        @extend .rule__layout;
+        width: 80%;
+    }
+}
+
+// 标题 -- title
+.title {
+    &__new-people {
+        text-align: center;
+    }
+    &--text {
+        position: relative;
+        display: inline-block;
+        padding: 0 16px 30px 16px;
+        font-size: 30px;
+        line-height: 1;
+        color: #003399;
+        border-bottom: 1px solid #ececec;
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            margin-left: -20px;
+            width: 40px;
+            height: 2px;
+            background-color: #003399;
+        }
+    }
+}
+
+// placeholder
+@mixin placeholder($color: #ccc, $fontsize: 14px) {
+    &::-webkit-input-placeholder {
+        color: $color;
+        font-size: $fontsize;
+    }
+    &:-ms-input-placeholder { // IE10+
+        color: $color;
+        font-size: $fontsize;
+    }
+    &:-moz-placeholder { // Firefox4-18
+        color: $color;
+        font-size: $fontsize;
+    }
+    &::-moz-placeholder { // Firefox19+
+        color: $color;
+        font-size: $fontsize;
+    }
+}
+
+.register__input {
+    @include placeholder(#f00);
+    width: 200px;
+    height: 44px;
+    line-height: 44px;
+    border: 1px solid #e5e5e5;
+}
+
+input::-ms-clear { display: none;}
+input::-ms-reveal { display: none;}

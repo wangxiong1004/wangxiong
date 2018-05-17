@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.wrapper {
+			    width: 300px;
+			    height: 400px;
+			    border: 1px solid #ccc;
+			    overflow: hidden;
+			}
+			.list {
+			    height: 40px;
+			    line-height: 40px;
+			}
+		</style>
+	</head>
+	<body>
+
+	    <div class="wrapper">
+            <ul class="container">
+                <li class="list">hello world</li>
+                <li class="list">hello world</li>
+                <li class="list">hello world</li>
+                <li class="list">hello world</li>
+                <li class="list">hello world</li>
+                <li class="list">hello world</li>
+                <li class="list">hello world</li>
+                <li class="list">hello world</li>
+                <li class="list">hello world</li>
+                <li class="list">hello world</li>
+                <li class="list">hello world</li>
+                <li class="list">hello world</li>
+                <li class="list">hello world</li>
+                <li class="list">hello world</li>
+            </ul>
+	    </div>
+
+	    <script src="https://unpkg.com/better-scroll/dist/bscroll.min.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+            var wrapper = document.querySelector('.wrapper')
+	    	var scroll = new BScroll(wrapper);
+	    	console.log(scroll);
+
+            scroll.on('pullingUp', function() {
+                console.log(555)
+            })
+	    </script>
+	</body>
+</html>

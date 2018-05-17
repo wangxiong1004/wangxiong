@@ -1,2 +1,139 @@
-.l-margin{margin:20px}input{border:none;outline:none;cursor:pointer}.button{display:block;width:142px;height:40px;line-height:40px;background-color:#fea721;border-radius:2px;font-size:0}.button__icon{display:inline-block;vertical-align:top;width:45px;height:40px;background:#f60 url("https://dolabank-apk.oss-cn-shenzhen.aliyuncs.com/dolabank/static/web/dist/images/standard_powder/join_icon.png") center no-repeat;border-radius:2px 0 0 2px}.button__text{display:inline-block;width:97px;text-align:center;font-size:16px;color:#fff}.form-button{display:block;width:346px;height:48px;line-height:48px;font-size:16px;color:#fff;background-color:#ff6700}.form-button:hover{background-color:#ea6912}.l-form-buttom{width:346px;height:48px;line-height:48px}.l-form-buttom__icon{width:80px;height:48px}.l-form-buttom__text{width:266px}
+.l-margin {
+  margin: 20px; }
+
+input {
+  border: none;
+  outline: none;
+  cursor: pointer; }
+
+.button {
+  display: block;
+  width: 142px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #fea721;
+  border-radius: 2px;
+  font-size: 0; }
+.button__icon {
+  display: inline-block;
+  vertical-align: top;
+  width: 45px;
+  height: 40px;
+  background: #f60 url("https://dolabank-apk.oss-cn-shenzhen.aliyuncs.com/dolabank/static/web/dist/images/standard_powder/join_icon.png") center no-repeat;
+  border-radius: 2px 0 0 2px; }
+.button__text {
+  display: inline-block;
+  width: 97px;
+  text-align: center;
+  font-size: 16px;
+  color: #fff; }
+
+.form-button {
+  display: block;
+  width: 346px;
+  height: 48px;
+  line-height: 48px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #ff6700; }
+.form-button:hover {
+  background-color: #ea6912; }
+
+.l-form-buttom {
+  width: 346px;
+  height: 48px;
+  line-height: 48px; }
+.l-form-buttom__icon {
+  width: 80px;
+  height: 48px; }
+.l-form-buttom__text {
+  width: 266px; }
+
+.list__item, .list__item--current {
+  width: 150px;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  font-size: 16px;
+  color: #757575;
+  border: 1px solid #e5e5e5; }
+.list__item--current {
+  border-color: #fea722;
+  color: #ff6700; }
+
+.input__text {
+  width: 346px;
+  height: 52px;
+  line-height: 52px;
+  background-color: #fff;
+  border: 1px solid #dcdcdc; }
+
+.nav {
+  color: #ccc; }
+.nav__item {
+  color: #e5e5e5; }
+.nav__item--active {
+  color: #ff6700; }
+
+.rule__table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #e4e4e4; }
+.rule__size, .rule--title, .rule--content {
+  font-size: 12px;
+  color: #989898;
+  line-height: 1.5em; }
+.rule__layout, .rule--title, .rule--content {
+  border: 1px solid #e4e4e4;
+  padding: 10px 34px; }
+.rule--title {
+  width: 20%; }
+.rule--content {
+  width: 80%; }
+
+.title__new-people {
+  text-align: center; }
+.title--text {
+  position: relative;
+  display: inline-block;
+  padding: 0 16px 30px 16px;
+  font-size: 30px;
+  line-height: 1;
+  color: #003399;
+  border-bottom: 1px solid #ececec; }
+.title--text:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -20px;
+  width: 40px;
+  height: 2px;
+  background-color: #003399; }
+
+.register__input {
+  width: 200px;
+  height: 44px;
+  line-height: 44px;
+  border: 1px solid #e5e5e5; }
+.register__input::-webkit-input-placeholder {
+  color: #f00;
+  font-size: 14px; }
+.register__input:-ms-input-placeholder {
+  color: #f00;
+  font-size: 14px; }
+.register__input:-moz-placeholder {
+  color: #f00;
+  font-size: 14px; }
+.register__input::-moz-placeholder {
+  color: #f00;
+  font-size: 14px; }
+
+input::-ms-clear {
+  display: none; }
+
+input::-ms-reveal {
+  display: none; }
+
 /*# sourceMappingURL=index.css.map */
