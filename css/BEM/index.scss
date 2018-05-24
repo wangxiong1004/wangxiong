@@ -187,7 +187,23 @@ input {
     height: 44px;
     line-height: 44px;
     border: 1px solid #e5e5e5;
+    &:focus {
+        border: 1px solid #f00;
+        outline: none;
+        color: #f60;
+        box-shadow: 0 0 2px #003399;
+    }
 }
 
 input::-ms-clear { display: none;}
 input::-ms-reveal { display: none;}
+
+
+.test__block {
+    li:first-child {
+        color: #f00;
+    }
+    li:last-child {
+        color: #088EF0;
+    }
+}

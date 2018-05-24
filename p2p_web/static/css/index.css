@@ -1,0 +1,85 @@
+.new-people__part {
+  padding: 70px 0 105px 0; }
+.new-people__part2 {
+  background: #fafafa; }
+.new-people__part4 {
+  margin-top: -145px;
+  padding-top: 150px;
+  background: url("https://dolabank-apk.oss-cn-shenzhen.aliyuncs.com/dolabank/static/images/v2/dola_guarantee_48.jpg") repeat; }
+.new-people__content {
+  margin-top: 45px; }
+.new-people__content .button__register {
+  display: block;
+  width: 224px;
+  height: 52px;
+  font-size: 18px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 52px;
+  background: url("https://dolabank-apk.oss-cn-shenzhen.aliyuncs.com/dolabank/static/images/v2/icn.png") no-repeat -149px -260px;
+  margin: 0 auto; }
+.new-people--text {
+  font-size: 16px;
+  color: #777;
+  line-height: 32px; }
+
+.title__new-people {
+  text-align: center; }
+.title--text {
+  position: relative;
+  display: inline-block;
+  padding: 0 16px 30px 16px;
+  font-size: 30px;
+  line-height: 1;
+  color: #003399;
+  border-bottom: 1px solid #ececec; }
+.title--text:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -20px;
+  width: 40px;
+  height: 2px;
+  background-color: #003399; }
+.title--text-color {
+  color: #fff; }
+.title--text-color:after {
+  background-color: #fff; }
+
+.reason__list {
+  float: left;
+  width: 285px;
+  height: 484px;
+  margin-right: 20px;
+  box-shadow: 0px 0px 24px rgba(0, 153, 255, 0.12);
+  background-repeat: no-repeat;
+  background-position: center; }
+.reason__list01 {
+  background-image: url("https://dolabank-apk.oss-cn-shenzhen.aliyuncs.com/dolabank/static/images/v2/dola_guarantee_34.png"); }
+.reason__list02 {
+  background-image: url("https://dolabank-apk.oss-cn-shenzhen.aliyuncs.com/dolabank/static/images/v2/dola_guarantee_35.png"); }
+.reason__list03 {
+  background-image: url("https://dolabank-apk.oss-cn-shenzhen.aliyuncs.com/dolabank/static/images/v2/dola_guarantee_36.png"); }
+.reason__list04 {
+  background-image: url("https://dolabank-apk.oss-cn-shenzhen.aliyuncs.com/dolabank/static/images/v2/dola_guarantee_37.png"); }
+.reason-title__block {
+  padding-top: 70px;
+  padding-left: 20px;
+  padding-bottom: 80px; }
+.reason__title {
+  font-size: 34px;
+  color: #fff; }
+.reason__item {
+  padding-left: 30px;
+  line-height: 32px;
+  font-size: 16px;
+  color: #666; }
+
+.slider__block {
+  width: 994px;
+  height: 588px;
+  margin: 85px auto 64px;
+  background: #000; }
+
+/*# sourceMappingURL=index.css.map */

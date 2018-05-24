@@ -1,4 +1,3 @@
-@charset "UTF-8";
 html, body {
   width: 100%;
   height: 100%; }
@@ -6,7 +5,7 @@ html, body {
 html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
-  font: 14px/1 "Microsoft Yahei", "Hiragino Sans GB", "Helvetica Neue", Helvetica, tahoma, arial, Verdana, sans-serif, "WenQuanYi Micro Hei", "宋体"; }
+  font: 14px/1 "Microsoft Yahei", "Hiragino Sans GB", "Helvetica Neue", Helvetica, tahoma, arial, Verdana, sans-serif, "WenQuanYi Micro Hei", "\5B8B\4F53"; }
 
 body {
   margin: 0;
@@ -110,65 +109,12 @@ button:-moz-focusring, [type="button"]:-moz-focusring, [type="reset"]:-moz-focus
 .clearfix:after {
   clear: both; }
 
-.border-top-1px:before {
-  content: ' ';
-  display: block;
-  border-top: 1px solid #666;
-  position: absolute;
-  left: 0;
-  right: 0; }
-
-.border-top-1px {
-  position: relative; }
-.border-top-1px:before {
-  top: 0; }
-
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
-  .border-top-1px:before {
-    -webkit-transform: scaleY(0.7);
-    transform: scaleY(0.7);
-    -webkit-transform-origin: left top; } }
-@media only screen and (-webkit-min-device-pixel-ratio: 2) {
-  .border-top-1px:before {
-    -webkit-transform: scaleY(0.5);
-    transform: scaleY(0.5);
-    -webkit-transform-origin: left top; } }
-@media only screen and (-webkit-min-device-pixel-ratio: 3) {
-  .border-top-1px:before {
-    -webkit-transform: scaleY(0.3);
-    transform: scaleY(0.3);
-    -webkit-transform-origin: left top; } }
-.border-bottom-1px:before {
-  content: ' ';
-  display: block;
-  border-top: 1px solid #666;
-  position: absolute;
-  left: 0;
-  right: 0; }
-
-.border-bottom-1px {
-  position: relative; }
-.border-bottom-1px:before {
-  bottom: 0; }
-
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
-  .border-bottom-1px:before {
-    -webkit-transform: scaleY(0.7);
-    transform: scaleY(0.7);
-    -webkit-transform-origin: left bottom; } }
-@media only screen and (-webkit-min-device-pixel-ratio: 2) {
-  .border-bottom-1px:before {
-    -webkit-transform: scaleY(0.5);
-    transform: scaleY(0.5);
-    -webkit-transform-origin: left bottom; } }
-@media only screen and (-webkit-min-device-pixel-ratio: 3) {
-  .border-bottom-1px:before {
-    -webkit-transform: scaleY(0.3);
-    transform: scaleY(0.3);
-    -webkit-transform-origin: left bottom; } }
-.dola-container {
+.l-container {
   width: 1200px;
   margin-left: auto;
   margin-right: auto; }
 
-/*# sourceMappingURL=index.min.css.map */
+.no-mr {
+  margin-right: 0 !important; }
+
+/*# sourceMappingURL=common.css.map */

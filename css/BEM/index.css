@@ -129,11 +129,21 @@ input {
 .register__input::-moz-placeholder {
   color: #f00;
   font-size: 14px; }
+.register__input:focus {
+  border: 1px solid #f00;
+  outline: none;
+  color: #f60;
+  box-shadow: 0 0 2px #003399; }
 
 input::-ms-clear {
   display: none; }
 
 input::-ms-reveal {
   display: none; }
+
+.test__block li:first-child {
+  color: #f00; }
+.test__block li:last-child {
+  color: #088EF0; }
 
 /*# sourceMappingURL=index.css.map */
