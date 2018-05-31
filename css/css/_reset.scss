@@ -105,6 +105,6 @@ button:-moz-focusring, [type="button"]:-moz-focusring, [type="reset"]:-moz-focus
     outline: 1px dotted ButtonText;
 }
 
-[hidden] {
+[hidden], .hidden {
     display: none;
 }
