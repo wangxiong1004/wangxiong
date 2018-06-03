@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>vue实例方法</title>
+	</head>
+	<body>
+	    <div id="app">
+	        <p>a: {{ a }}</p>
+	    </div>
+
+	    <script src="vue1.0.26.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+	    	var vm = new Vue({
+	    	    // el: '#app',
+	    	    data: {
+	    	        a: 10
+	    	    },
+	    	    aa: 11,
+	    	    show: function() {
+	    	        alert('自定义属性');
+	    	    }
+	    	});
+
+            vm.$mount('#app');  // 手动挂载元素
+
+	    	vm.$el.style.background = '#ccc';     // 获取dom节点
+
+	    	vm.$data.a = 100;     // 获取数据
+
+            console.log(vm.$options.aa);    // 获取自定义属性
+            // vm.$options.show();
+
+            vm.$log();  // 打印现在数据状态
+	    </script>
+	</body>
+</html>

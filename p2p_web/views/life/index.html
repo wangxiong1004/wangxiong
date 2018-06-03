@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+	</head>
+	<body>
+	    <div class="container-fluid">
+	        <div class="table-responsive">
+    	        <table class="table table-striped table-bordered table-hover table-condensed">
+    	            <caption>消费统计</caption>
+    	            <thead>
+    	                <tr class="info">
+    	                    <th>月份</th>
+    	                    <th>支付宝--余额宝</th>
+    	                    <th>支付宝--定期</th>
+    	                    <th>支付宝--黄金</th>
+    	                    <th>支付宝--基金</th>
+    	                    <th>支付宝--花呗</th>
+    	                    <th>微信--零钱</th>
+    	                    <th>微信--零钱通</th>
+    	                    <th>京东--白条</th>
+    	                    <th>信用卡--交通银行</th>
+    	                    <th>信用卡--浦发银行</th>
+    	                    <th>消费</th>
+    	                    <th>总计</th>
+    	                </tr>
+    	            </thead>
+    	            <tbody id="mixi_table">
+    	            </tbody>
+    	        </table>
+	        </div>
+	    </div>
+
+        <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+	    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	    <script type="text/javascript">
+	    	$.ajax({
+	    		type: "get",
+	    		url: "../data/life.json",
+	    		async: true,
+	    		success: function(data) {
+	    		    loadDom(data);
+	    		}
+	    	});
+
+	    	function loadDom(data) {
+	    	    var html = "";
+	    	    var xiaofei = "";
+	    	    var total = "";
+	    	    $.each(data, function(index, value) {
+	    	        xiaofei = value.z_huabei * 1 + value.j_baitiao * 1 + value.x_jiaotong * 1 + value.x_pufa * 1;
+	    	        total = value.z_yuebao * 1 + value.z_dingqi * 1 +
+	    	                value.z_huangjin * 1 + value.z_jijin * 1 +
+	    	                value.z_huabei * 1 + value.w_lingqian * 1 +
+	    	                value.w_lingqiantong * 1 + value.j_baitiao * 1 +
+	    	                value.x_jiaotong * 1 + value.x_pufa * 1;
+
+	    	    	html += '<tr>' +
+                                '<td>' + value.month + '月份</td>' +
+                                '<td>' + value.z_yuebao + '</td>' +
+                                '<td>' + value.z_dingqi + '</td>' +
+                                '<td>' + value.z_huangjin + '</td>' +
+                                '<td>' + value.z_jijin + '</td>' +
+                                '<td>' + value.z_huabei + '</td>' +
+                                '<td>' + value.w_lingqian + '</td>' +
+                                '<td>' + value.w_lingqiantong + '</td>' +
+                                '<td>' + value.j_baitiao + '</td>' +
+                                '<td>' + value.x_jiaotong + '</td>' +
+                                '<td>' + value.x_pufa + '</td>' +
+                                '<td>' + xiaofei + '</td>' +
+                                '<td>' + total + '</td>' +
+                            '</tr>';
+	    	    });
+
+	    	    $("#mixi_table").empty().append(html);
+	    	}
+	    </script>
+	</body>
+</html>

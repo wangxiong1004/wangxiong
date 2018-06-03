@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>vue模版</title>
+		<style type="text/css">
+			[v-cloak] {
+			    display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+	    <!-- 防止花括号闪烁 v-cloak -->
+	    <div id="app" v-cloak>
+
+	        <input type="text" v-model="version" />
+	        <!-- 数据绑定 -->
+	        <p>{{ version }}</p>
+	        <p v-text="version"></p>
+
+	        <hr />
+	        <!-- 只绑定一次 -->
+	        <p>{{* version }}</p>
+
+            <hr />
+            <!-- 编译html标签 -->
+            <div>{{{ html }}}</div>
+            <div v-html="html"></div>
+	    </div>
+
+	    <script src="vue1.0.26.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+	    	var vm = new Vue({
+	    	    el: '#app',
+	    	    data: {
+	    	        version: 'vue1.0.26',
+	    	        html: '<h3>title</h3>'
+	    	    }
+	    	});
+	    </script>
+	</body>
+</html>

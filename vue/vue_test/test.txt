@@ -1,0 +1,258 @@
+|- vue1.0.html  -- 雏形
+            官网： https://v1-cn.vuejs.org/guide/
+    vue雏形
+    new Vue({
+        el: '#app',     // 元素
+        data: {},       // 数据
+        methods: {},     // 事件
+        computed: {},   // 计算属性
+    });
+
+    data数据类型：number/string/boolean/object/array
+
+
+|- vue1.1.html  -- 指令
+    01.v-model -- 双向数据绑定
+        <input type="text" v-model="msg" >
+        new Vue({
+            el: '#app',
+            data: {
+                msg: 'model'
+            }
+        });
+
+    02.v-for    -- 循环
+        // 循环数组 -- 索引: $index   注：添加重复数据，要使用track-by="$index"
+        <li v-for="item in arr" track-by="$index">{{ item }} -- {{ $index }}</li>
+        // 循环对象 -- 索引： $index 键: $key
+        <li v-for="item in obj">{{ item }} -- {{ $key }} -- {{ $index }}</li>
+        // 显示循环 (key, value)
+        <li v-for="(key, value) in obj">{{ key }} -- {{ value }} -- {{ $index }} -- {{ $key }}</li>
+
+    03.v-on:     -- 绑定      -- 简写: @
+        // 绑定事件 dblclick/click/mouseover/mouseout/mousedown/...
+        <button v-on:click="show">绑定事件</button>
+        new Vue({
+            el: '#app',
+            methods: {
+                show: function() {
+                    console.log(this);  // 返回vue的实例
+                    alert('点击事件');
+                }
+            }
+        });
+
+    04.v-show   -- 是否显示
+
+
+|- vue1.2.html  -- 事件
+    01.事件简写 -- v-on:click === @click
+    <button @click="show"></button>
+
+    02.事件对象, 传参
+    <button @click="show($event, 22)"></button>
+    methods: {
+        show(e, index) {
+            console.log(e);
+            console.log(index); // 22
+        }
+    }
+
+    03.事件冒泡     -- .stop
+    // 原生
+    <div @click="show01">
+        <button @click="show02($event)"></button>
+    </div>
+    methods: {
+        show02(e) {
+            // 阻止事件冒泡
+            if (e.stopPropagation) {
+                e.stopPropagation();
+            } else {
+                e.cancelBubble = true;
+            }
+        }
+    }
+
+    // vue -- 事件修饰符 .stop
+    <div @click="show01">
+        <button @click.stop="show02"></button>
+    </div>
+
+    04.默认事件     -- .prevent
+    // 原生
+    <div @click="show01">
+        <button @click="show02($event)"></button>
+    </div>
+    methods: {
+        show02(e) {
+            // 阻止事件冒泡
+            e.preventDefault();
+        }
+    }
+
+    // vue -- 事件修饰符 .prevent
+    <div @click="show01">
+        <button @click.prevent="show02"></button>
+    </div>
+
+    05.键盘事件 @keydown/keyup
+        // 获取键码
+        e.keyCode
+
+    06.常用键盘修饰符  -- .键码  @keydown.13 === 回车事件
+        -- 回车   @keydown.enter=""
+        -- 上    @keydown.up=""
+        -- 下    @keydown.down=""
+        -- 左    @keydown.left=""
+        -- 右    @keydown.right=""
+
+
+|- vue1.3.html  -- 属性
+    01.v-bind:  -- 绑定属性     -- 简写 :
+        <img :src="url" />
+
+    02.class
+        <style>
+            .width {width: 100px;}
+            .height {height: 100px;}
+        </style>
+        <div :class="[w, h]"></div>
+        data: {
+            w: 'width',
+            h: 'heigth'
+        }
+
+        <style>
+            .width {width: 100px;}
+            .height {height: 100px;}
+        </style>
+        <div :class="{width: true, height: isTrue}"></div>
+        data: {
+            isTrue: true
+        }
+
+        <style>
+            .width {width: 100px;}
+            .height {height: 100px;}
+        </style>
+        <div :class="obj"></div>
+        data: {
+            obj: {
+                width: true,
+                height: true
+            }
+        }
+
+    03.style
+        <div :style="[a]"></div>
+        data: {
+            a: {
+                width: '100px',
+                height: '200px'
+            }
+        }
+
+        <div :style="{ width: '100px', height: '100px' }"></div>
+
+        <div :style="obj"></div>
+        data: {
+            obj: {
+                width: '100px',
+                height: '100px'
+            }
+        }
+
+
+|- vue1.4.html -- 模版
+    01.数据只绑定一次
+        {{* msg }}
+
+    02.数据绑定
+        {{ msg }}
+        <p v-text="msg"></p>
+
+    03.html绑定
+        {{{ html }}}
+        <p v-html="html"></p>
+
+    04.防止花括号闪烁  -- v-cloak
+        <style>
+            [v-cloak] {display: none;}
+        </style>
+        <div id="app" v-cloak></div>
+
+|- vue1.5.html -- 过滤器
+    01.语法
+    {{ data | filter A '参数' | filter B }}
+
+    02.过滤器
+        -- uppercase    -- 转大写
+        -- lowercase    -- 转小写
+        -- capitalize   -- 首字母大写
+        -- currency     -- 钱格式转换
+        -- debounce     -- 延迟执行 （配合事件）  @keydown="show | debounce 2000"
+        -- limitBy      -- 取数   参数1： 取几个    参数2：从哪开始取
+        -- filterBy     -- 过滤   参数1： 过滤包含
+        -- orderBy      -- 排序   1:正序    -1： 倒序
+
+    03.自定义过滤器
+        // input: 数据    a: 参数1  b: 参数2
+        Vue.filter(filterName, function(input, a, b) {
+            return '';
+        });
+
+        Vue.filter(filterName, {
+            read: function(input) {
+                return '';
+            },
+            write: function(val) {
+                return val;
+            }
+        });
+
+
+|- vue1.6.html -- 交互
+    01.vue-resource
+        this.$http.get('url', {data}).then(() => {}, () => {});
+        this.$http.post('url', {data}, {emulateJSON: true}).then(() => {}, () => {});
+        this.$http.jsonp('url', {data}, {jsonp: 'cb'}).then(() => {}, () => {});
+
+
+|- vue1.7.html  -- 声明周期
+    created -- 实例已经创建
+    beforeCompile   -- 编译之前
+    compiled    -- 编译完成
+    ready   -- 插入到文档中
+    beforeDestroy   -- 实例销毁之前
+    destroyed   -- 实例销毁完成
+
+    01.销毁实例
+    this.$destroy();
+    vm.$destroy();
+
+|- vue1.8.html  -- 计算属性
+    data: {
+        a: 10
+    },
+    computed: {
+        b() {
+            return this.a * 2;
+        },
+        c: {
+            get() {
+                return this.a + 2;
+            },
+            set(val) {
+                this.a = val;   // c的值
+            }
+        }
+    }
+
+|- vue1.9.html  -- 实例方法
+    01. $el     -- 获取挂载元素DOM
+    02. $data   -- 获取数据
+    03. $mount('#app')  -- 挂载元素
+    04. $destroy()  -- 销毁实例
+    05. $options    -- 获取自定义属性
+    06. $log()      -- 打印数据状态

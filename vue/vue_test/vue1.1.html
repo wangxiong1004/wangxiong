@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>vue指令</title>
+	</head>
+	<body>
+	    <div id="app">
+	        <!-- v-model 双向绑定 -->
+            <div>
+                <input type="text" v-model="money" />
+            </div>
+            <p>{{ money }}</p>
+
+            <hr />
+
+            <!-- v-for 循环 -->
+            <ul>
+                <li v-for="item in arr" track-by="$index">{{ item }} -- {{ $index }}</li>
+            </ul>
+            <ul>
+                <li v-for="item in json">{{ item }} -- {{ $key }} -- {{ $index }}</li>
+            </ul>
+            <ul>
+                <li v-for="(key, value) in json">{{ key }} -- {{ value }} -- {{ $index }} -- {{ $key }}</li>
+            </ul>
+
+            <hr />
+            <!-- v-on 绑定事件 -->
+            <button v-on:click="add">点击事件</button>
+            <button @click="add">点击事件</button>
+
+            <hr />
+            <!-- v-show 是否显示-->
+            <button @click="toggle">显示隐藏</button>
+            <div style="width: 100px;height: 100px;background: #ccc;" v-show="isShow"></div>
+	    </div>
+
+	    <script src="vue1.0.26.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+	    	var vm = new Vue({
+	    	    el: '#app',
+	    	    data: {
+	    	        money: 2000,
+	    	        arr: ['width', 'height', 'background'],
+	    	        json: {
+	    	            a: 'apple',
+	    	            b: 'origin',
+	    	            c: 'banana'
+	    	        },
+	    	        isShow: true
+	    	    },
+	    	    methods: {
+	    	        add() {
+	    	            console.log(this);    // vm的实例
+	    	            // this.$data.arr.push('box-shadow');
+	    	            this.arr.push('box-shadow');
+	    	        },
+
+	    	        toggle() {
+	    	            this.isShow = !this.isShow;
+	    	        }
+	    	    }
+	    	});
+	    </script>
+	</body>
+</html>

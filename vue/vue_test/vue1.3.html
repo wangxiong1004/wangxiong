@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>vue属性</title>
+	</head>
+	<body>
+	    <div id="app">
+            <!-- 绑定属性 v-bind:src === :src -->
+            <img v-bind:src="url" :alt="alt" />
+
+            <hr />
+            <!-- class01 -->
+            <style type="text/css">
+            	.red {
+            	    color: red;
+            	}
+            	.blue {
+            	    background: blue;
+            	}
+            </style>
+            <div :class="[r, b]">文字...</div>
+
+            <hr />
+            <!-- class02 -->
+            <div :class="{red: isTrue, blue: true}">文字...</div>
+
+            <hr />
+            <!-- class03 -->
+            <div :class="obj">文字...</div>
+
+            <hr />
+            <!-- style01 -->
+            <div :style="{color: 'red', background: '#ccc'}">style</div>
+
+            <hr />
+            <!-- style02 -->
+            <div :style="[c, d]">style</div>
+	    </div>
+
+	    <script src="vue1.0.26.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+	    	var vm = new Vue({
+	    	    el: '#app',
+	    	    data: {
+	    	        url: 'https://www.baidu.com/img/baidu_jgylogo3.gif',
+	    	        alt: '百度logo',
+	    	        r: 'red',
+	    	        b: 'blue',
+	    	        isTrue: true,
+	    	        obj: {
+	    	            red: true,
+	    	            blue: false
+	    	        },
+	    	        c: {
+	    	            color: 'yellow',
+	    	            fontSize: '20px'
+	    	        },
+	    	        d: {
+	    	            background: '#eaeaea'
+	    	        }
+	    	    }
+	    	});
+	    </script>
+	</body>
+</html>

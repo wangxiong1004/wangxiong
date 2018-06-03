@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>vue雏形</title>
+	</head>
+	<body>
+	    <div id="app">
+	        <!-- 数据展示 -->
+	        <p>vue版本: {{ version }}</p>
+	    </div>
+
+	    <script src="vue1.0.26.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+	    	var vm = new Vue({
+	    	    el: '#app',   // 元素挂载--选择器
+	    	    data: {       // 数据
+	    	        version: 'vue1.0.26',
+	    	        msg: undefined
+	    	    }
+	    	});
+	    </script>
+	</body>
+</html>

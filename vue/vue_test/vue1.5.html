@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>vue过滤器</title>
+	</head>
+	<body>
+	    <div id="app">
+	        <!-- 转大写 -->
+            {{ 'welcome' | uppercase }}
+
+            <hr />
+            <!-- 转小写 -->
+            {{ 'WELCOME' | lowercase }}
+
+            <hr />
+            <!-- 首字母大写 -->
+            <!-- 多过滤器 -->
+            {{ 'WELCOME' | lowercase | capitalize }}
+
+            <hr />
+            <!-- 过滤器传参 -->
+            <!-- 钱转换 -->
+            {{ 12 | currency }}
+            {{ 12 | currency '￥' }}
+
+            <hr />
+            <!-- 延迟执行 -->
+            <input type="text" @keyup="show | debounce 3000" />
+
+            <hr />
+            <!-- limitBy 刷选数据 -->
+            <!-- 取几个数据 -->
+            <ul>
+                <li v-for="item in arr | limitBy 2">{{ item }}</li>
+            </ul>
+            <!-- 从哪开始取 -->
+            <ul>
+                <li v-for="item in arr | limitBy 2 arr.length-2">{{ item }}</li>
+            </ul>
+
+            <hr />
+            <!-- filterBy 过滤数据 -->
+            <input type="text" v-model="a" />
+            <ul>
+                <li v-for="item in arr2 | filterBy a">{{ item }}</li>
+            </ul>
+
+            <hr />
+            <!-- orderBy 排序     1: 正序 2： 倒序-->
+            <input type="text" v-model="b" />
+            <ul>
+                <li v-for="item in arr2 | orderBy b">{{ item }}</li>
+            </ul>
+
+            <hr />
+            <!-- 自定义过滤器 -->
+            <p>{{ c | toDou 1 2 }}</p>
+
+            <p>{{ now | date}}</p>
+
+            <input type="text" v-model="msg | filterHtml" />
+            <p v-html="msg"></p>
+	    </div>
+
+	    <script src="vue1.0.26.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+	        Vue.filter('toDou', function(input, a ,b) {
+	            console.log(a);
+	            console.log(b);
+	            return input < 10 ? '0' + input : input;
+	        });
+	        Vue.filter('date', function(input) {
+	            var oDate = new Date(input);
+	            return oDate.getFullYear() + '-' + (oDate.getMonth() + 1) + '-' + oDate.getDate() + ' ' +
+	                   oDate.getHours() + ':' + oDate.getMinutes() + ':' + oDate.getSeconds();
+	        });
+	        // 过滤html标记 -> 双向过滤器
+	        Vue.filter('filterHtml', {
+	            read: function(input) {    // model -> view
+                    return input.replace(/<[^<]+>/g, '');
+	            },
+	            write: function(val) {       // view -> model
+                    console.log(val);
+                    return val;
+	            }
+	        });
+	    	var vm = new Vue({
+	    	    el: '#app',
+	    	    data: {
+                    arr: [1, 2, 3, 4, 5],
+                    a: undefined,
+                    b: undefined,
+                    arr2: ['width', 'height', 'background', 'box-shdow'],
+                    c: 8,
+                    now: Date.now(),
+                    msg: '<strong>welcome</strong>'
+	    	    },
+	    	    methods: {
+	    	        show() {
+	    	            alert(55);
+	    	        }
+	    	    }
+	    	});
+	    </script>
+	</body>
+</html>
+
+<!--
+    语法: data | filter A '参数' | filter B
+
+        uppercase 转大写
+        lowercase 转小写
+        capitalize 首字母大写
+        currency 美元符号$
+        debounce 延迟执行   --配合事件
+        limitBy 限制几个
+            参数： 第一个：取几个数    第二个：从第几个开始
+        filterBy: 过滤带参数的数据
+        orderBy: 排序 1：正序    -1：倒序
+
+    自定义过滤器
+        Vue.filter(name,function(input) {})
+        // 双向过滤器
+        Vue.filter(name,{
+            read: function(input) {},
+            write: function(val) {
+                return val;
+            }
+        });
+
+
+-->

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>vue钩子函数--生命周期</title>
+	</head>
+	<body>
+	    <div id="app">
+            <button @click="close">实例销毁</button>
+	    </div>
+
+	    <script src="vue1.0.26.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+	    	var vm = new Vue({
+	    	    el: '#app',
+                created() {
+                    console.log('实例已经创建 -- created');
+                },
+                beforeCompile() {
+                    console.log('编译之前 -- beforeCompile');
+                },
+                compiled() {
+                    console.log('编译完成 -- compiled');
+                },
+                ready() {
+                    console.log('插入到文档中 -- ready');
+                },
+                beforeDestroy() {
+                    console.log('实例销毁之前 -- beforeDestroy');
+                },
+                destroyed() {
+                    console.log('实例销毁完成 -- destroyed');
+                },
+                methods: {
+                    close() {
+                        this.$destroy();
+                    }
+                }
+	    	});
+
+	    	document.onclick = function() {
+	    	    // 实例销毁
+	    	    vm.$destroy();
+	    	}
+	    </script>
+	</body>
+</html>

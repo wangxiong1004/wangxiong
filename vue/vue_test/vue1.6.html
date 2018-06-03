@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>vue交互</title>
+	</head>
+	<body>
+	    <div id="app">
+	        <!-- get交互 -->
+            <button @click="getDate">get获取数据</button>
+            <pre>{{ text }}</pre>
+
+            <hr />
+            <!-- get发送数据 -->
+            <button @click="getSend">get发送数据</button>
+            <p>{{ a }} + {{ b }} = {{ ab }}</p>
+
+            <hr />
+            <!-- post发送数据 -->
+            <button @click="postSend">post发送数据</button>
+            <p>{{ c }} - {{ d }} = {{ cd }}</p>
+
+            <hr />
+            <!-- jsonp获取数据 -->
+            <button @click="jsonp">jsonp获取数据</button>
+
+            <hr />
+            <!-- jsonp -- callback -->
+            <div>
+                <input type="text" v-model="baidu" @keyup="jsonp1" />
+            </div>
+            <button @click="jsonp1">jsonp获取数据</button>
+            <ul>
+                <li v-for="item in baiduArr">{{ item }}</li>
+            </ul>
+	    </div>
+
+	    <script src="vue1.0.26.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="vue-resource.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+	    	var vm = new Vue({
+	    	    el: '#app',
+	    	    data: {
+                    text: undefined,
+                    a: 2,
+                    b: 3,
+                    ab: undefined,
+                    c: 10,
+                    d: 20,
+                    cd: undefined,
+                    baidu: '百度一下，你就知道',
+                    baiduArr: []
+	    	    },
+	    	    methods: {
+	    	        getDate() {
+                        this.$http.get('test.txt').then((res) => {
+                            console.log(res.data);
+                            this.text = res.data;
+                        }, (res) => {
+                            console.log(res.status);
+                        });
+	    	        },
+	    	        getSend() {
+	    	            this.$http.get('get.php', {
+	    	                a: this.a,
+	    	                b: this.b
+	    	            }).then((res) => {
+                            console.log(res.data);
+                            this.ab = res.data;
+                        }, (res) => {
+                            console.log(res.status);
+                        });
+	    	        },
+	    	        postSend() {
+                        this.$http.get('post.php', {
+                            c: this.c,
+                            d: this.d
+                        }, {
+                            emulateJSON: true
+                        }).then((res) => {
+                            console.log(res.data);
+                            this.cd = res.data;
+                        }, (res) => {
+                            console.log(res.status);
+                        });
+                    },
+	    	        jsonp: function() {
+                        this.$http.jsonp('https://sug.so.360.cn/suggest',{
+                            word: 'a'
+                        }).then(function(res) {
+                            console.log(res.data.s);
+                        }, function(res) {
+                            console.log(res.data);
+                        });
+                    },
+                    jsonp1: function() {
+                        this.$http.jsonp('https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',{
+                            wd: this.baidu
+                        }, {
+                            jsonp: 'cb'
+                        }).then(function(res) {
+                            console.log(res.data.s);
+                            this.baiduArr = res.data.s;
+                        }, function(res) {
+                            console.log(res.data);
+                        });
+                    }
+	    	    }
+	    	});
+	    </script>
+	</body>
+</html>
+<!--
+    get:
+    post:
+    jsonp:
+-->
