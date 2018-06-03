@@ -2,6 +2,7 @@
 
 @mixin center-block($block-width: 1200px) {
     width: $block-width;
+//  min-width: 640px;
     margin-left: auto;
     margin-right: auto;
 }

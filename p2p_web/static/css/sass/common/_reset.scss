@@ -8,7 +8,7 @@ html, body {
 html {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
-    font: #{$html-font-size}/#{$html-line-height} $html-font-family;
+    font: 14px/1 "Microsoft Yahei", "Hiragino Sans GB", "Helvetica Neue", Helvetica, tahoma, arial, Verdana, sans-serif, "WenQuanYi Micro Hei", "\5B8B\4F53";
 }
 
 body {
@@ -19,7 +19,7 @@ body {
 
 a {
     text-decoration: none;
-    color: $a-color;
+    color: #ff6700;
     background-color: transparent;
     -webkit-backface-visibility: hidden;
 }
