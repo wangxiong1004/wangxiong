@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../static/layui/css/layui.css">
+</head>
+
+<body>
+    <div class="layui-tab" lay-filter="test1">
+        <ul class="layui-tab-title">
+            <li class="layui-this" lay-id="111">网站设置</li>
+            <li lay-id="222">用户管理</li>
+            <li lay-id="333">权限分配</li>
+            <li lay-id="444">商品管理</li>
+            <li lay-id="555">订单管理</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">内容1</div>
+            <div class="layui-tab-item">内容2</div>
+            <div class="layui-tab-item">内容3</div>
+            <div class="layui-tab-item">内容4</div>
+            <div class="layui-tab-item">内容5</div>
+        </div>
+    </div>
+
+    <script src="../../static/layui/layui.js"></script>
+    <script>
+        layui.use(['jquery', 'element'], function () {
+            var $ = layui.jquery;
+            var element = layui.element;
+
+            var layid = location.hash.replace(/^#test1=/, '');
+            element.tabChange('test1', layid);
+            console.log(layid);
+
+            element.on('tab(test1)', function (data) {
+                console.log(data);
+                // location.hash = 'test1=' + this.getAttribute('lay-id');
+                location.hash = 'test1=' + $(this).attr('lay-id');
+                console.log(location.hash);
+            });
+
+            element.tabAdd('test1', {
+                title: '后台订单',
+                content: '内容6',
+                id: 666
+            });
+        });
+    </script>
+</body>
+
+</html>

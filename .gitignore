@@ -1,5 +1,6 @@
 .project
 .idea
+.vscode
 
 web/node_modules
 

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>progress</title>
+    <link rel="stylesheet" href="../../static/layui/css/layui.css">
+</head>
+
+<body>
+    <div class="layui-progress" lay-filter="demo">
+        <div class="layui-progress-bar" lay-percent="10%"></div>
+    </div>
+
+    <script src="../../static/layui/layui.js"></script>
+    <script>
+        layui.use(['element'], function () {
+            var element = layui.element;
+
+            element.progress('demo', '30%');
+        });
+    </script>
+</body>
+
+</html>

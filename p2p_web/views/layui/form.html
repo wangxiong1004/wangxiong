@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../static/layui/css/layui.css">
+</head>
+
+<body>
+    <div style="width: 800px;padding: 20px;border: 1px solid #ccc; border-radius: 5px;margin: 30px auto; ">
+        <form class="layui-form" lay-filter="testform">
+            <div class="layui-form-item">
+                <label for="" class="layui-form-label">姓名</label>
+                <div class="layui-input-block">
+                    <input type="text" class="layui-input" placeholder="請輸入姓名" autocomplete="off" name="username" lay-verify="username" lay-verType="msg">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">密码框</label>
+                <div class="layui-input-inline">
+                    <input type="password" name="password" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">
+                    <a href="javascript:;">忘記密碼？</a>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">选择框</label>
+                <div class="layui-input-block">
+                    <select name="city" lay-search lay-filter="city">
+                        <option value=""></option>
+                        <option value="0">北京</option>
+                        <option value="1">上海</option>
+                        <option value="2" disabled>广州</option>
+                        <option value="3" selected>深圳</option>
+                        <option value="4">杭州</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">选择框</label>
+                <div class="layui-input-block">
+                    <select name="quiz">
+                        <option value="">请选择</option>
+                        <optgroup label="城市记忆">
+                            <option value="你工作的第一个城市">你工作的第一个城市？</option>
+                        </optgroup>
+                        <optgroup label="学生时代">
+                            <option value="你的工号">你的工号？</option>
+                            <option value="你最喜欢的老师">你最喜欢的老师？</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+
+                <div class="layui-inline">
+                    <label class="layui-form-label">范围</label>
+                    <div class="layui-input-inline" style="width: 100px;">
+                        <select name="city" lay-search lay-filter="city01">
+                            <option value=""></option>
+                            <option value="0">北京</option>
+                            <option value="1">上海</option>
+                            <option value="2" disabled>广州</option>
+                            <option value="3" selected>深圳</option>
+                            <option value="4">杭州</option>
+                        </select>
+                    </div>
+                    <div class="layui-form-mid">-</div>
+                    <div class="layui-input-inline" style="width: 100px;">
+                        <select name="city" lay-search lay-filter="city01">
+                            <option value=""></option>
+                            <option value="0">北京</option>
+                            <option value="1">上海</option>
+                            <option value="2" disabled>广州</option>
+                            <option value="3" selected>深圳</option>
+                            <option value="4">杭州</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">复选框</label>
+                <div class="layui-input-block">
+                    <input type="checkbox" name="like[write]" title="写作" value="1">
+                    <input type="checkbox" name="like[read]" title="阅读" checked>
+                    <input type="checkbox" name="like[dai]" title="发呆">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">复选框</label>
+                <div class="layui-input-block">
+                    <input type="checkbox" name="" title="写作" lay-skin="primary" checked>
+                    <input type="checkbox" name="" title="发呆" lay-skin="primary">
+                    <input type="checkbox" name="" title="禁用" lay-skin="primary" disabled>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">开关01</label>
+                <div class="layui-input-block">
+                    <input type="checkbox" name="switch" lay-skin="switch" lay-filter="encrypt" title="是否加密">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">开关</label>
+                <div class="layui-input-block">
+                    <input type="checkbox" name="switch01" lay-skin="switch" lay-text="ON|OFF" value="1" checked>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">开关</label>
+                <div class="layui-input-block">
+                    <input type="checkbox" name="switch02" lay-skin="switch" lay-text="开启|关闭">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">开关</label>
+                <div class="layui-input-block">
+                    <input type="checkbox" name="switch03" lay-skin="switch" disabled>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">单选框</label>
+                <div class="layui-input-block">
+                    <input type="radio" name="sex" value="男" title="男">
+                    <input type="radio" name="sex" value="女" title="女" checked>
+                    <input type="radio" name="sex" value="" title="中性" disabled>
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">文本域</label>
+                <div class="layui-input-block">
+                    <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="../../static/layui/layui.js "></script>
+    <script>
+        layui.use(['jquery', 'form', 'layer'], function () {
+            var $ = layui.jquery;
+            var form = layui.form;
+            var layer = layui.layer;
+
+            // form.render('select');
+            // form.render(null, 'testform'); //更新 lay-filter="testform" 所在容器内的全部表单状态
+            // form.render('select', 'test2'); //更新 lay-filter="test2" 所在容器内的全部 select 状态
+
+            // 监听事件
+            form.on('select', function (data) {
+                console.log(data);
+            });
+
+            form.on('checkbox', function (data) {
+                console.log(data);
+            });
+
+            // 初始化表单 -- 参数的键值是元素对应的 name 和 value。
+            form.val('testform', { // 2.3版本新增
+                username: 'zhangsan'
+            });
+
+            // 自定义表单验证规则
+            form.verify({
+                username: function (value, item) { //value：表单的值、item：表单的DOM对象
+                    if (!new RegExp("^[a-zA-Z0-9_\u4e00-\u9fa5\\s·]+$").test(value)) {
+                        return '用户名不能有特殊字符';
+                    }
+                    if (/(^\_)|(\__)|(\_+$)/.test(value)) {
+                        return '用户名首尾不能出现下划线\'_\'';
+                    }
+                    if (/^\d+\d+\d$/.test(value)) {
+                        return '用户名不能全为数字';
+                    }
+                },
+
+                //我们既支持上述函数式的方式，也支持下述数组的形式
+                //数组的两个值分别代表：[正则匹配、匹配不符时的提示文字]
+                pass: [
+                    /^[\S]{6,12}$/, '密码必须6到12位，且不能出现空格'
+                ]
+            });
+
+            form.on('submit(formDemo)', function (data) {
+                console.log(data);
+
+                // data.elem.setAttribute('disabled', true);
+                $(data.elem).attr({
+                    'disabled': false
+                }).css({
+                    'background': '#ccc'
+                });
+
+                // from.render();
+                form.render('select');
+
+                return false;
+            });
+
+        });
+    </script>
+</body>
+
+</html>
+<!-- 
+    required：注册浏览器所规定的必填字段
+    lay-verify：注册form模块需要验证的类型
+    class="layui-input"：layui.css提供的通用CSS类
+
+    lay-ignore: 将不会对该标签进行美化渲染，即保留系统风格
+
+    // 更新渲染 form.render(type, filter);
+    form.render(); // 更新全部
+    form.render('select'); //刷新select选择框渲染   select/checkbox/radio
+
+    // 事件过滤器 lay-filter
+    lay-filter 任意字符 事件过滤器，主要用于事件的精确匹配，跟选择器是比较类似的。
+
+    // 格式验证 lay-verify
+    lay-verify="email"  // 邮箱验证
+    lay-verify="required" // 必填项验证
+    required（必填项） phone（手机号） email（邮箱） url（网址） number（数字） date（日期） identity（身份证） 自定义值
+    lay-verify="required|phone|number"
+
+    form.verify({
+        username: function(value, item){ //value：表单的值、item：表单的DOM对象
+            if(!new RegExp("^[a-zA-Z0-9_\u4e00-\u9fa5\\s·]+$").test(value)){
+                return '用户名不能有特殊字符';
+            }
+            if(/(^\_)|(\__)|(\_+$)/.test(value)){
+                return '用户名首尾不能出现下划线\'_\'';
+            }
+            if(/^\d+\d+\d$/.test(value)){
+                return '用户名不能全为数字';
+            }
+        }
+        
+        // 我们既支持上述函数式的方式，也支持下述数组的形式
+        // 数组的两个值分别代表：[正则匹配、匹配不符时的提示文字]
+        ,pass: [
+            /^[\S]{6,12}$/
+            ,'密码必须6到12位，且不能出现空格'
+        ] 
+    }); 
+
+    // 定义元素的风格，目前只对 checkbox 元素有效，可将其转变为开关样式
+    lay-skin: switch（开关风格） primary（原始风格） 
+
+    // title
+    title 任意字符 设定元素名称，一般用于checkbox、radio框
+
+    // 提交
+    lay-submit 无需填写值 绑定触发提交的元素，如button
+
+    // 事件监听 form.on('event(过滤器值)', callback);
+    select 监听select下拉选择事件 
+    checkbox 监听checkbox复选框勾选事件 
+    switch 监听checkbox复选框开关事件 
+    radio 监听radio单选框事件 
+    submit 监听表单提交事件
+
+    lay-filter=""   // 过滤器值
+ -->
