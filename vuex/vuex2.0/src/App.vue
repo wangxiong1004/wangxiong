@@ -7,43 +7,41 @@
     <button @click="clickOdd">偶数才能点击增加</button>
     <button @click="clickSync">点击异步</button>
     <div>现在是数字为： {{ count }}, 它是一个： {{ getOdd }}</div>
+    <home></home>
   </div>
 </template>
 
 <script>
-import {mapGetters, mapActions} from 'vuex';
+import home from './views/home.vue';
+
+import { mapGetters, mapActions } from "vuex";
 
 export default {
-  name: 'app',
-  data () {
+  name: "app",
+  data() {
     return {
-      msg: 'Welcome to Your Vue.js App'
-    }
+      msg: "Welcome to Your Vue.js App"
+    };
   },
   methods: {
-    ...mapActions([
-      'increment',
-      'decrement',
-      'clickOdd',
-      'clickSync'
-    ]),
+    ...mapActions(["increment", "decrement", "clickOdd", "clickSync"]),
     add() {
-      alert('hello vuex');
+      alert("hello vuex");
     }
   },
   computed: {
-    ...mapGetters([
-      'count',
-      'getOdd'
-    ])
+    ...mapGetters(["count", "getOdd"])
+  },
+  components: {
+    home
   }
   // computed: mapGetters([])
-}
+};
 </script>
 <!-- $store.state.count -->
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -51,7 +49,8 @@ export default {
   margin-top: 60px;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 

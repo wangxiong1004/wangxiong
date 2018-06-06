@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../static/layui/css/layui.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="test"></div>
+
+    <script src="../../static/layui/layui.js"></script>
+    <script>
+        layui.use(['util'], function () {
+            var util = layui.util;
+
+            var endTime = new Date(2018, 5, 30).getTime() // 假设为结束日期
+                ,
+                serverTime = new Date().getTime();
+
+            util.countdown(endTime, serverTime, function (date, serverTime, timer) {
+                var str = date[0] + '天' + util.digit(date[1], 2) + '时' + util.digit(date[2], 2) + '分' +
+                    date[3] + '秒';
+                layui.$('#test').html('距离2018年6月30日还有：' + str);
+            });
+
+        });
+    </script>
+</body>
+
+</html>
