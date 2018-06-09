@@ -1,92 +1,95 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>vue事件</title>
-	</head>
-	<body>
-	    <div id="app">
-	        <!-- 事件简写 v-on:click === @click -->
-	        <button v-on:click="show">按钮</button>
-	        <button @click="show">按钮</button>
 
-            <hr />
-	        <!-- 事件对象, 传参  $event -->
-	        <button @click="env($event, 55)">事件对象</button>
+<head>
+	<meta charset="UTF-8">
+	<title>vue事件</title>
+</head>
 
-	        <hr />
-	        <!-- 事件冒泡 -->
-            <div @click="show02">
-                <button @click="show03($event)">事件冒泡</button>
-            </div>
-            <!-- .stop -->
-            <div @click="show04">
-                <button @click.stop="show05">事件冒泡02</button>
-            </div>
+<body>
+	<div id="app">
+		<!-- 事件简写 v-on:click === @click -->
+		<button v-on:click="show">按钮</button>
+		<button @click="show">按钮</button>
 
-            <hr />
-            <!-- 默认事件 -->
-            <button @contextmenu="show06($event)">默认事件</button>
-            <button @contextmenu.prevent="show07">默认事件</button>
+		<hr />
+		<!-- 事件对象, 传参  $event -->
+		<button @click="env($event, 55)">事件对象</button>
 
-            <hr />
-            <!-- 键盘事件  keydown/keyup -->
-            <input type="text" @keydown="key($event)" />
+		<hr />
+		<!-- 事件冒泡 -->
+		<div @click="show02">
+			<button @click="show03($event)">事件冒泡</button>
+		</div>
+		<!-- .stop -->
+		<div @click="show04">
+			<button @click.stop="show05">事件冒泡02</button>
+		</div>
 
-            <hr />
-            <!-- 键盘修饰符 回车: enter/13 上：up 下： down 左： left 右： right -->
-            <input type="text" @keydown.enter="key02" />
-            <input type="text" @keydown.13="key02" />
-	    </div>
+		<hr />
+		<!-- 默认事件 -->
+		<button @contextmenu="show06($event)">默认事件</button>
+		<button @contextmenu.prevent="show07">默认事件</button>
 
-	    <script src="vue1.0.26.js" type="text/javascript" charset="utf-8"></script>
-	    <script type="text/javascript">
-	    	var vm = new Vue({
-	    	    el: '#app',
-	    	    data: {
-	    	        version: 'vue1.0.26'
-	    	    },
-	    	    methods: {
-	    	        show() {
-	    	            console.log(555);
-	    	        },
-	    	        env(e, meth) {
-	    	            console.log(e);
-	    	            console.log(meth);
-	    	        },
-	    	        show02() {
-	    	            alert(2);
-	    	        },
-	    	        show03(e) {
-	    	            // 阻止事件冒泡
-	    	            if (e.stopPropagation) {
-	    	                e.stopPropagation();
-	    	            } else {
-	    	                e.cancelBubble = true;
-	    	            }
-	    	            alert(30);
-	    	        },
-	    	        show04() {
-                        alert(2);
-                    },
-                    show05() {
-                        alert(30);
-                    },
-                    show06(e) {
-                        e.preventDefault();
-                        alert('阻止默认事件');
-                    },
-                    show07() {
-                        alert('阻止默认事件');
-                    },
-                    key(e) {
-                        alert(e.keyCode);   // 获取键码
-                    },
-                    key02() {
-                        alert('键盘修饰符');
-                    }
-	    	    }
-	    	});
-	    </script>
-	</body>
+		<hr />
+		<!-- 键盘事件  keydown/keyup -->
+		<input type="text" @keydown="key($event)" />
+
+		<hr />
+		<!-- 键盘修饰符 回车: enter/13 上：up 下： down 左： left 右： right -->
+		<input type="text" @keydown.enter="key02" />
+		<input type="text" @keydown.13="key02" />
+	</div>
+
+	<script src="vue1.0.26.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el: '#app',
+			data: {
+				version: 'vue1.0.26'
+			},
+			methods: {
+				show() {
+					console.log(555);
+				},
+				env(e, meth) {
+					console.log(e);
+					console.log(meth);
+				},
+				show02() {
+					alert(2);
+				},
+				show03(e) {
+					// 阻止事件冒泡
+					if (e.stopPropagation) {
+						e.stopPropagation();
+					} else {
+						e.cancelBubble = true;
+					}
+					alert(30);
+				},
+				show04() {
+					alert(2);
+				},
+				show05() {
+					alert(30);
+				},
+				show06(e) {
+					e.preventDefault();
+					alert('阻止默认事件');
+				},
+				show07() {
+					alert('阻止默认事件');
+				},
+				key(e) {
+					alert(e.keyCode);   // 获取键码
+				},
+				key02() {
+					alert('键盘修饰符');
+				}
+			}
+		});
+	</script>
+</body>
+
 </html>
