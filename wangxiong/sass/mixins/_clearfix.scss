@@ -1,0 +1,25 @@
+@charset 'utf-8';
+// 清除浮动
+
+@mixin cf() {
+    *zoom: 1;
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin cf() {
+    *zoom: 1;
+    &:after {
+        content: ".";
+        height: 0;
+        clear: both;
+        display: block;
+        visibility: hidden;
+    }
+}
